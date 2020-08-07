@@ -1,0 +1,14 @@
+.Logo {
+  padding: 3px;
+  height: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.Logo img {
+  height: 100%;
+}
+
+.Logo:hover {
+  background-color: #60b0f4;
+}
