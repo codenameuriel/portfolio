@@ -3,6 +3,7 @@ import key from '../../key';
 import axios from '../../axios'
 import parse from 'html-react-parser';
 import ProjectDemosStyles from './ProjectDemos.module.css';
+import Spinner from '../../components/Spinner/Spinner';
 
 class ProjectDemos extends Component {
   state = {
@@ -29,13 +30,13 @@ class ProjectDemos extends Component {
   }
 
   renderDemos() {
-    let demos = <p>Loading...</p>;
+    let demos = <Spinner />;
 
     if (this.state.demos.length > 0) {
       demos = (
         this.state.demos.map(demo => {
           return (
-            <div style ={{width: '33%'}}>
+            <div style ={{width: '35%'}}>
               <h3>{demo.snippet.title}</h3>
               {parse(demo.player.embedHtml)}
               <p>{demo.snippet.description}</p>
