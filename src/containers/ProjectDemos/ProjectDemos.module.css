@@ -1,0 +1,9 @@
+.ProjectDemos {
+  color: white;
+  display: flex;
+}
+
+h2 {
+  font-size: 35px;
+  margin-bottom: 40px;
+}

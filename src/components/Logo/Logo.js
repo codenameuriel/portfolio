@@ -1,6 +1,6 @@
 import React from 'react';
 import LogoStyles from './Logo.module.css';
-import PortfolioLogo from '../../assets/images/UrielsPortfolio.png';
+import PortfolioLogo from "../../assets/images/UrielsPortfolioLogo.png";
 
 const Logo = () => {
   return (

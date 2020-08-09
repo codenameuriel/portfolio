@@ -1,5 +1,5 @@
 .Navbar {
-  height: 80px;
+  height: 70px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -18,4 +18,9 @@
 
 .Logo {
   height: 100%;
+  border-bottom: 2px solid black;
+}
+
+.Logo:hover {
+  border-bottom: 2px solid #d0d0d0;
 }
