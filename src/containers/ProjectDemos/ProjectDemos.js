@@ -10,10 +10,10 @@ class ProjectDemos extends Component {
   }
 
   componentDidMount() {
-    this.getYoutubeDemos();
+    this.getProjectDemos();
   }
 
-  async getYoutubeDemos() {
+  async getProjectDemos() {
     try {
       const demoIds = '_WgXrcOqG3M,gf8-Ui0z7NI,4KLrYPeXw9Q';
 
