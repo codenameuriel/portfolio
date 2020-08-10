@@ -1,0 +1,20 @@
+.NavItem {
+  margin: 10px 30px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 25px;
+}
+
+.NavItem a {
+  color: white;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+}
+
+.NavItem a:hover, .NavItem a:active,
+.NavItem a.active {
+  border-bottom: 1px solid #56e133;
+}

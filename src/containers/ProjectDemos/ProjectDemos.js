@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import key from '../../key';
-import axios from '../../axios'
+import { youtubeKey } from '../../key';
+import { youtubeAxios } from '../../axios'
 import parse from 'html-react-parser';
 import ProjectDemosStyles from './ProjectDemos.module.css';
 import Spinner from '../../components/Spinner/Spinner';
@@ -18,7 +18,7 @@ class ProjectDemos extends Component {
     try {
       const demoIds = '_WgXrcOqG3M,gf8-Ui0z7NI,4KLrYPeXw9Q';
 
-      const data = await axios.get(`videos?id=${demoIds}&part=snippet,player&key=${key}`);
+      const data = await youtubeAxios.get(`videos?id=${demoIds}&part=snippet,player&key=${youtubeKey}`);
       
       this.setState({
         demos: data.data.items
@@ -36,7 +36,7 @@ class ProjectDemos extends Component {
       demos = (
         this.state.demos.map(demo => {
           return (
-            <div style ={{width: '35%'}}>
+            <div className={ProjectDemosStyles.Demo}>
               <h3>{demo.snippet.title}</h3>
               {parse(demo.player.embedHtml)}
               <p>{demo.snippet.description}</p>

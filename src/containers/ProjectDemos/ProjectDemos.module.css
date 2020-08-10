@@ -1,8 +1,26 @@
 .ProjectDemos {
   display: flex;
+  text-align: center;
+  color: #d0d0d0;
 }
 
 h2 {
+  color: #d0d0d0;
   font-size: 35px;
   margin-bottom: 40px;
+  text-align: center;
+}
+
+.Demo h3 {
+  margin-bottom: 35px;
+}
+
+.Demo {
+  width: 35%;
+  padding: 15px;
+  border-bottom: 1px solid rgb(15, 15, 15);
+}
+
+.Demo:hover {
+  border-bottom: 1px solid #56e133;
 }

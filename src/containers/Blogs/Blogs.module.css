@@ -1,0 +1,32 @@
+.Blogs {
+  color: #d0d0d0;
+  display: flex;
+  flex-flow: row-reverse;
+  text-align: center;
+}
+
+.Blogs img {
+  height: 275px;
+  width: 350px;
+}
+
+.Blog {
+  width: 25%;  
+  padding: 15px;
+  text-align: center;
+}
+
+.Blog:hover {
+  border-bottom: 1px solid #56e133;
+}
+
+.Blog h3 {
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: #d0d0d0;
+  font-size: 35px;
+  margin-bottom: 40px;
+  text-align: center;
+}

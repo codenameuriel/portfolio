@@ -1,7 +1,9 @@
 import axios from 'axios';
 
-const axiosInstance = axios.create({
+export const youtubeAxios= axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3'
 });
 
-export default axiosInstance;
+export const mediumAxios = axios.create({
+  baseURL: 'https://v1.nocodeapi.com'
+});

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarStyles from './Navbar.module.css';
 import Logo from '../../Logo/Logo';
+import NavItems from '../NavItems/NavItems';
 
 const Navbar = () => {
   return (
@@ -8,7 +9,9 @@ const Navbar = () => {
       <div className={NavbarStyles.Logo}>
         <Logo />
       </div>
-      <nav></nav>
+      <nav>
+        <NavItems />
+      </nav>
     </header>
   );
 }
