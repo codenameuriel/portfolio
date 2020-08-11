@@ -1,5 +1,5 @@
 .Blogs {
-  color: #d0d0d0;
+  color: #e9e9e9;
   display: flex;
   flex-flow: row-reverse;
   text-align: center;
@@ -11,13 +11,17 @@
 }
 
 .Blog {
-  width: 25%;  
+  width: 25%;
+  margin: 0 5px;
   padding: 15px;
   text-align: center;
+  background-color: #e9e9e9;
+  color: black;
+  border-bottom: 4px solid black;
 }
 
 .Blog:hover {
-  border-bottom: 1px solid #56e133;
+  border-bottom: 4px solid #56e133;
 }
 
 .Blog h3 {
@@ -25,7 +29,7 @@
 }
 
 h2 {
-  color: #d0d0d0;
+  color: #e9e9e9;
   font-size: 35px;
   margin-bottom: 40px;
   text-align: center;

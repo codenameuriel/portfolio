@@ -5,7 +5,7 @@ import PortfolioLogo from "../../assets/images/UrielsPortfolioLogo.png";
 const Logo = () => {
   return (
     <div className={LogoStyles.Logo}>
-      <a href="/">
+      <a href="/aboutme">
         <img src={PortfolioLogo} alt="My Logo"/>
       </a>
     </div>
