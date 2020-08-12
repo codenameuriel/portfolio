@@ -17,6 +17,8 @@ class Blogs extends Component {
   async getBlogs() {
     try {
       const data = await mediumAxios.get(`codenameuriel/medium/${mediumKey}`);
+
+      console.log(data.data);
       
       this.setState({
         blogs: data.data
