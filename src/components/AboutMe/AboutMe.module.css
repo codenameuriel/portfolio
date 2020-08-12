@@ -3,7 +3,33 @@
   color:#e9e9e9;
 }
 
+.Container {
+  display:flex;
+  justify-content: center;
+}
+
 .AboutMe img {
-  height: 280px;
+  height: 275px;
+  width: 215px;
+  margin-top: 7px;
+}
+
+.AboutMe hr {
+  width: 1000px;
+  border-color: #56e133;
+}
+
+.ImageDiv {
+  /* border-right: 1px solid #56e133; */
+  /* border-top: 1px solid #56e133; */
+  height: 500px;
   width: 225px;
+  margin-top: 25px;
+}
+
+.BioDiv {
+  margin-top: 25px;
+  margin-left: 75px;
+  font-size: 20px;
+  font-weight: 400;
 }

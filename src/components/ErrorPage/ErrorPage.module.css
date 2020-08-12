@@ -7,8 +7,18 @@
 .ErrorPage img {
   width: 2%;
   margin-left: 1%;
+
+  margin-top: 15px;
+  margin-bottom: 25px;
+  margin-right: -450px;
 }
 
-.ErrorPage span {
+.ErrorPage p {
   color: #56e133;
+  position: fixed;
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
 }

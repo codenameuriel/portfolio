@@ -6,8 +6,10 @@ const ErrorPage = () => {
   return (
     <div className={ErrorPageStyles.ErrorPage}>
       <h1>Sorry, nothing to see here...</h1>
-      <span>But check out my projects and blogs!</span>
-      <img src={ArrowImage} alt="Arrow"/>
+      <div className={ErrorPageStyles.Container}>
+        <p>But check out my projects and blogs!</p>
+        <img src={ArrowImage} alt="Arrow"/>
+      </div>
     </div>
   );
 }
