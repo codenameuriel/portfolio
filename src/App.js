@@ -3,17 +3,19 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import asyncComponent from './hoc/asyncComponent';
 import Layout from './hoc/Layout/Layout';
 import HomePage from './components/HomePage/HomePage';
-// import ProjectDemos from './containers/ProjectDemos/ProjectDemos';
-// import Blogs from './containers/Blogs/Blogs';
 import AboutMe from './components/AboutMe/AboutMe';
-import ErrorPage from './components/ErrorPage/ErrorPage';
 
+// lazy loading
 const AsyncBlogs = asyncComponent(() => {
   return import('./containers/Blogs/Blogs');
 });
 
 const AsyncProjectDemos = asyncComponent(() => {
   return import('./containers/ProjectDemos/ProjectDemos.js');
+});
+
+const AsyncErrorPage = asyncComponent(() => {
+  return import('./components/ErrorPage/ErrorPage.js');
 });
 
 const App = () => {
@@ -26,7 +28,7 @@ const App = () => {
           <Route path="/blogs" component={AsyncBlogs}/>
           <Route path="/projects" component={AsyncProjectDemos}/>
           <Redirect exact from="/" to="/aboutme"/>
-          <Route component={ErrorPage}/>
+          <Route component={AsyncErrorPage}/>
         </Switch>
       </Layout>
     </div>
