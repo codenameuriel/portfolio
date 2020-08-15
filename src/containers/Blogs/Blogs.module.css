@@ -3,10 +3,8 @@
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  flex-direction: row;
   padding-left: 15px;
   padding-right: 15px;
-  /* margin-left: 220px; */
   text-align: center;
 }
 
