@@ -5,7 +5,7 @@ import AboutMeStyles from './AboutMe.module.css';
 const AboutMe = () => {
   return (
     <div className={AboutMeStyles.AboutMe}>
-      <h2>About Me</h2>
+      <h2 className={AboutMeStyles.Title}>About Me</h2>
       <hr />
       <div className={AboutMeStyles.Container}>
         <div className={AboutMeStyles.ImageDiv}>

@@ -52,7 +52,7 @@ class ProjectDemos extends Component {
   render() {
     return (
       <div>
-        <h2>Projects</h2>
+        <h2 className={ProjectDemosStyles.Title}>Projects</h2>
         <div className={ProjectDemosStyles.ProjectDemos}>
           {this.renderDemos()}
         </div>
