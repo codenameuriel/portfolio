@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import asyncComponent from './hoc/asyncComponent';
+import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from './hoc/Layout/Layout';
 import HomePage from './components/HomePage/HomePage';
 import AboutMe from './components/AboutMe/AboutMe';
