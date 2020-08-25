@@ -96,31 +96,39 @@ class Contact extends Component {
     const { form } = this.state;
     return (
       <div className={ContactStyles.Contact}>
-        <h1>Connect with me</h1>
-        <form>
-          <input
-            onChange={this.inputHandler} 
-            type="text" 
-            name="name"
-            placeholder="Name" 
-            value={form.name.value}/>
+        <h1>Contact</h1>
+        <div className={ContactStyles.MainContainer}>
+          <div className={ContactStyles.SubContainer}>
+            <h1>Reach Out</h1>
+            <form>
+              <input
+                onChange={this.inputHandler} 
+                type="text" 
+                name="name"
+                placeholder="Name" 
+                value={form.name.value}/>
 
-          <input
-            onChange={this.inputHandler}  
-            type="email" 
-            name="email"
-            placeholder="Email" 
-            value={form.email.value}/>
+              <input
+                onChange={this.inputHandler}  
+                type="email" 
+                name="email"
+                placeholder="Email" 
+                value={form.email.value}/>
 
-          <textarea
-            onChange={this.inputHandler}  
-            name="message"
-            placeholder="Message"
-            value={form.message.value}/>
+              <textarea
+                onChange={this.inputHandler}  
+                name="message"
+                placeholder="Message"
+                value={form.message.value}/>
 
-          {/* <input type="submit" disabled={!this.state.isValid} value="Reach Out"/> */}
-          <button onClick={this.sendEmail} disabled={!this.state.isValid}>Reach Out</button>
-        </form>
+              <button onClick={this.sendEmail} disabled={!this.state.isValid}>Send</button>
+            </form>
+          </div>
+          <hr/>
+          <p>
+            Thank you for checking out my portfolio. If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
+          </p>
+        </div>
       </div>
     );
   }

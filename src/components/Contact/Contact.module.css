@@ -5,6 +5,29 @@
   flex-flow: column;
 }
 
+.MainContainer {
+  display: flex;
+  flex-flow: row;
+}
+
+.MainContainer hr {
+  margin-top: 25px;
+  border-color: #56e133;
+}
+
+.Contact p {
+  font-size: 22px;
+  width: 50%;
+  margin-right: 5%;
+}
+
+.SubContainer {
+  margin-top: 25px;
+  background-color: rgb(16, 16, 16);
+  width: 35%;
+  margin-left: 100px;
+}
+
 .Contact input, textarea{
   width: 80%;
   padding: 10px;
@@ -18,12 +41,7 @@
 }
 
 .Contact form {
-  display: flex;
-  flex-flow: column;
-  width: 45%;
-  text-align: center;
-  background-color: rgb(16, 16, 16);
-  align-self: center;
+  display: contents;
 }
 
 .Contact input:focus, textarea:focus {
