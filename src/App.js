@@ -4,6 +4,7 @@ import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from './hoc/Layout/Layout';
 import HomePage from './components/HomePage/HomePage';
 import AboutMe from './components/AboutMe/AboutMe';
+import Contact from './components/Contact/Contact';
 
 // lazy loading
 const AsyncBlogs = asyncComponent(() => {
@@ -24,6 +25,7 @@ const App = () => {
       <Layout>
         <HomePage />
         <Switch>
+          <Route path="/contact" component={Contact}/>
           <Route path="/aboutme" component={AboutMe}/>
           <Route path="/blogs" component={AsyncBlogs}/>
           <Route path="/projects" component={AsyncProjectDemos}/>

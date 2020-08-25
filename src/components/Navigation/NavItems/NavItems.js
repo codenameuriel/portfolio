@@ -8,6 +8,7 @@ const NavItems = () => {
       <NavItem link="/projects">Projects</NavItem>
       <NavItem link="/blogs">Blogs</NavItem>
       <NavItem link="/aboutme">About Me</NavItem>
+      <NavItem link="/contact">Contact</NavItem>
     </ul>
   );
 }
