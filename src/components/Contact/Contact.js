@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ContactStyles from './Contact.module.css';
 import emailjs from 'emailjs-com';
 import { templateKey, userKey } from '../../key';
+import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 class Contact extends Component {
   state = {
@@ -125,9 +126,19 @@ class Contact extends Component {
             </form>
           </div>
           <hr/>
-          <p>
-            Thank you for checking out my portfolio. If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
-          </p>
+          <div className={ContactStyles.Info}>
+            <h3>Thanks for checking out my portfolio</h3>
+            <p>
+              You can always come back and check out my new projects and blogs that will document my learning.
+            </p>
+            <p>
+              If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
+            </p>
+            <div className={ContactStyles.Icons}>
+              <FaLinkedin className={ContactStyles.Linkedin}/>
+              <FaGithub className={ContactStyles.Github}/>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -13,12 +13,7 @@
 .MainContainer hr {
   margin-top: 25px;
   border-color: #56e133;
-}
-
-.Contact p {
-  font-size: 22px;
-  width: 50%;
-  margin-right: 5%;
+  margin-left: 50px;
 }
 
 .SubContainer {
@@ -81,4 +76,40 @@
 
 .Contact input {
  height: 30px;
+}
+
+.Linkedin {
+  height: 50px;
+  width: 50px;
+  color: #56e133;
+  margin-right: 15px;
+}
+
+.Github {
+  height: 50px;
+  width: 50px;
+  color: #56e133;
+}
+
+.Info {
+  display: flex;
+  flex-flow: column;
+  width: 60%;
+  padding: 0 50px;
+}
+
+.Info h3 {
+  margin-top: 40px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.Info p {
+  font-size: 22px;
+  width: 100%;
+  text-align: left;
+}
+
+.Icons {
+  margin-top: 150px;
 }
