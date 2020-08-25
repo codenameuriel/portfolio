@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ContactStyles from './Contact.module.css';
 import emailjs from 'emailjs-com';
 import { templateKey, userKey } from '../../key';
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 class Contact extends Component {
   state = {
@@ -135,8 +135,14 @@ class Contact extends Component {
               If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
             </p>
             <div className={ContactStyles.Icons}>
-              <FaLinkedin className={ContactStyles.Linkedin}/>
-              <FaGithub className={ContactStyles.Github}/>
+              <a 
+                href="https://www.linkedin.com/in/uriel-rodriguez-9ab2946b/" 
+                target="_blank" 
+                rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin}/></a>
+              <a 
+                href="https://github.com/codenameuriel" 
+                target="_blank" 
+                rel="noopener noreferrer"><FaGithub className={ContactStyles.Github}/></a>
             </div>
           </div>
         </div>

@@ -81,14 +81,18 @@
 .Linkedin {
   height: 50px;
   width: 50px;
-  color: #56e133;
+  color: #24ac03;
   margin-right: 15px;
+}
+
+.Linkedin:hover, .Github:hover {
+  color: #56e133;
 }
 
 .Github {
   height: 50px;
   width: 50px;
-  color: #56e133;
+  color: #24ac03;
 }
 
 .Info {
