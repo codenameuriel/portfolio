@@ -58,6 +58,18 @@ class Contact extends Component {
     });
   }
 
+  clearInputFields() {
+    const clearedForm = {...this.state.form};
+    for (let inputName in clearedForm) {
+      const clearedInput = {...clearedForm[inputName]};
+      clearedInput.value = '';
+      clearedInput.valid = false;
+      clearedForm[inputName] = clearedInput;
+      this.setState({form: clearedForm});
+    }
+    this.setState({isValid: false});
+  }
+
   sendEmail = async(event) => {
     try {
       event.preventDefault();
@@ -70,7 +82,10 @@ class Contact extends Component {
         message: form.message.value
       }
     
-      if (this.state.isValid) emailjs.send('gmail', templateKey, templateParams, userKey);
+      if (this.state.isValid) {
+        emailjs.send('gmail', templateKey, templateParams, userKey);
+        this.clearInputFields();
+      }
     
     } catch (error) {
       console.log(error);
