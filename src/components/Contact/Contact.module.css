@@ -23,6 +23,10 @@
   margin-left: 100px;
 }
 
+.SubContainer h1 {
+  font-size: 25px;
+}
+
 .Contact input, textarea{
   width: 80%;
   padding: 10px;
@@ -83,6 +87,7 @@
   width: 50px;
   color: #24ac03;
   margin-right: 15px;
+  margin-left: -100px;
 }
 
 .Linkedin:hover, .Github:hover {
@@ -116,4 +121,6 @@
 
 .Icons {
   margin-top: 150px;
+  margin-right: 50
+  px;
 }
