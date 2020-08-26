@@ -3,7 +3,7 @@ import { mediumAxios } from '../../axios';
 import { mediumKey } from '../../key';
 import parse from 'html-react-parser';
 import BlogsStyles from './Blogs.module.css';
-import Spinner from '../../components/Spinner/Spinner';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Blogs extends Component {
   state = {

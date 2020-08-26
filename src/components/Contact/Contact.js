@@ -3,6 +3,8 @@ import ContactStyles from './Contact.module.css';
 import emailjs from 'emailjs-com';
 import { templateKey, userKey } from '../../key';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import Modal from '../UI/Modal/Modal';
+import { VscChromeClose } from 'react-icons/vsc';
 
 class Contact extends Component {
   state = {
@@ -29,9 +31,18 @@ class Contact extends Component {
         valid: false
       }
     },
-    isValid: false
+    isValid: false,
+    emailSent: false
   }
 
+  showModal() {
+    this.setState({emailSent: true});
+  }
+
+  closeModal = () => {
+    this.setState({emailSent: false});
+  }
+ 
   checkValidity(value, condition) {
     if (condition.required) return value.trim() !== '';
     if (condition.isEmail) {
@@ -86,6 +97,7 @@ class Contact extends Component {
       if (this.state.isValid) {
         emailjs.send('gmail', templateKey, templateParams, userKey);
         this.clearInputFields();
+        this.showModal();
       }
     
     } catch (error) {
@@ -95,58 +107,65 @@ class Contact extends Component {
 
   render() {
     const { form } = this.state;
+    
     return (
-      <div className={ContactStyles.Contact}>
-        <h1>Contact</h1>
-        <div className={ContactStyles.MainContainer}>
-          <div className={ContactStyles.SubContainer}>
-            <h1>Reach Out</h1>
-            <form>
-              <input
-                onChange={this.inputHandler} 
-                type="text" 
-                name="name"
-                placeholder="Name" 
-                value={form.name.value}/>
+      <> 
+        <Modal emailSent={this.state.emailSent}>
+          <VscChromeClose onClick={this.closeModal}/>
+          <p>Thanks for reaching out!</p>
+        </Modal>
+        <div className={ContactStyles.Contact}>
+          <h1>Contact</h1>
+          <div className={ContactStyles.MainContainer}>
+            <div className={ContactStyles.SubContainer}>
+              <h1>Reach Out</h1>
+              <form>
+                <input
+                  onChange={this.inputHandler} 
+                  type="text" 
+                  name="name"
+                  placeholder="Name" 
+                  value={form.name.value}/>
 
-              <input
-                onChange={this.inputHandler}  
-                type="email" 
-                name="email"
-                placeholder="Email" 
-                value={form.email.value}/>
+                <input
+                  onChange={this.inputHandler}  
+                  type="email" 
+                  name="email"
+                  placeholder="Email" 
+                  value={form.email.value}/>
 
-              <textarea
-                onChange={this.inputHandler}  
-                name="message"
-                placeholder="Message"
-                value={form.message.value}/>
+                <textarea
+                  onChange={this.inputHandler}  
+                  name="message"
+                  placeholder="Message"
+                  value={form.message.value}/>
 
-              <button onClick={this.sendEmail} disabled={!this.state.isValid}>Send</button>
-            </form>
-          </div>
-          <hr/>
-          <div className={ContactStyles.Info}>
-            <h3>Thanks for checking out my portfolio</h3>
-            <p>
-              You can always come back and check out my new projects and blogs that will document my learning.
-            </p>
-            <p>
-              If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
-            </p>
-            <div className={ContactStyles.Icons}>
-              <a 
-                href="https://www.linkedin.com/in/uriel-rodriguez-9ab2946b/" 
-                target="_blank" 
-                rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin}/></a>
-              <a 
-                href="https://github.com/codenameuriel" 
-                target="_blank" 
-                rel="noopener noreferrer"><FaGithub className={ContactStyles.Github}/></a>
+                <button onClick={this.sendEmail} disabled={!this.state.isValid}>Send</button>
+              </form>
+            </div>
+            <hr/>
+            <div className={ContactStyles.Info}>
+              <h3>Thanks for checking out my portfolio</h3>
+              <p>
+                You can always come back and check out my new projects and blogs that will document my learning.
+              </p>
+              <p>
+                If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
+              </p>
+              <div className={ContactStyles.Icons}>
+                <a 
+                  href="https://www.linkedin.com/in/uriel-rodriguez-9ab2946b/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin}/></a>
+                <a 
+                  href="https://github.com/codenameuriel" 
+                  target="_blank" 
+                  rel="noopener noreferrer"><FaGithub className={ContactStyles.Github}/></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

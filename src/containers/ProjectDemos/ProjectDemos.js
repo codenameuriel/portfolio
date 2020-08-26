@@ -3,7 +3,7 @@ import { youtubeKey } from '../../key';
 import { youtubeAxios } from '../../axios'
 import parse from 'html-react-parser';
 import ProjectDemosStyles from './ProjectDemos.module.css';
-import Spinner from '../../components/Spinner/Spinner';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class ProjectDemos extends Component {
   state = {
