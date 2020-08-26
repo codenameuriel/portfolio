@@ -14,6 +14,10 @@ class Blogs extends Component {
     this.getBlogs();
   }
 
+  blockDragNDrop = event => {
+    event.preventDefault();
+  }
+
   async getBlogs() {
     try {
       const data = await mediumAxios.get(`codenameuriel/medium/${mediumKey}`);
@@ -59,7 +63,7 @@ class Blogs extends Component {
           return (
             <div key={blog.isoDate} className={BlogsStyles.Blog}>
               <h3>{blog.title}</h3>
-              <a href={blog.guid} target="_blank" rel="noopener noreferrer">{parse(images[index])}</a>
+              <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>
               <p><strong>Published: {dates[index]}</strong></p>
             </div>
           );

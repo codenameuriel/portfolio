@@ -35,6 +35,10 @@ class Contact extends Component {
     emailSent: false
   }
 
+  blockDragNDrop = event => {
+    event.preventDefault();
+  }
+
   showModal() {
     this.setState({emailSent: true});
   }
@@ -156,11 +160,11 @@ class Contact extends Component {
                 <a 
                   href="https://www.linkedin.com/in/uriel-rodriguez-9ab2946b/" 
                   target="_blank" 
-                  rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin}/></a>
+                  rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin} onMouseDown={this.blockDragNDrop}/></a>
                 <a 
                   href="https://github.com/codenameuriel" 
                   target="_blank" 
-                  rel="noopener noreferrer"><FaGithub className={ContactStyles.Github}/></a>
+                  rel="noopener noreferrer"><FaGithub className={ContactStyles.Github} onMouseDown={this.blockDragNDrop}/></a>
               </div>
             </div>
           </div>

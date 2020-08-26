@@ -21,6 +21,7 @@
   background-color: rgb(16, 16, 16);
   width: 35%;
   margin-left: 100px;
+  height: 518px;
 }
 
 .SubContainer h1 {
@@ -87,7 +88,7 @@
   width: 50px;
   color: #24ac03;
   margin-right: 15px;
-  margin-left: -100px;
+  /* margin-left: -100px; */
 }
 
 .Linkedin:hover, .Github:hover {
@@ -120,7 +121,7 @@
 }
 
 .Icons {
-  margin-top: 150px;
-  margin-right: 50
-  px;
+  margin-top: 225px;
+  /* margin-right: 50px; */
+  margin-right: 120px;
 }
