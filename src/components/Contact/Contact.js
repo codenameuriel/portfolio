@@ -154,7 +154,7 @@ class Contact extends Component {
                 You can always come back and check out my new projects and blogs that will document my learning.
               </p>
               <p>
-                If you would like to get in touch with me, you can send me an email using the form. Or you can check out my LinkedIn and GitHub.
+                If you would like to get in touch with me, you can send me an email using the form. Or you can go to my LinkedIn and GitHub.
               </p>
               <div className={ContactStyles.Icons}>
                 <a 

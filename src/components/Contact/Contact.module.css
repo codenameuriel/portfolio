@@ -116,12 +116,12 @@
 
 .Info p {
   font-size: 22px;
-  width: 100%;
+  width: 95%;
   text-align: left;
 }
 
 .Icons {
   margin-top: 225px;
-  /* margin-right: 50px; */
   margin-right: 120px;
+  margin-right: 850px;
 }
