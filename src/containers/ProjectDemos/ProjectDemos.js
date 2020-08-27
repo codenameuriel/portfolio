@@ -36,7 +36,7 @@ class ProjectDemos extends Component {
       demos = (
         this.state.demos.map(demo => {
           return (
-            <div className={ProjectDemosStyles.Demo}>
+            <div className={ProjectDemosStyles.Demo} key={demo.id}>
               <h3>{demo.snippet.title}</h3>
               {parse(demo.player.embedHtml)}
               <p>{demo.snippet.description}</p>

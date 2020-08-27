@@ -32,7 +32,8 @@ class Contact extends Component {
       }
     },
     isValid: false,
-    emailSent: false
+    emailSent: false, 
+    error: null
   }
 
   blockDragNDrop = event => {
@@ -44,7 +45,10 @@ class Contact extends Component {
   }
 
   closeModal = () => {
-    this.setState({emailSent: false});
+    this.setState({
+      emailSent: false,
+      error: null
+    });
   }
  
   checkValidity(value, condition) {
@@ -86,26 +90,26 @@ class Contact extends Component {
     this.setState({isValid: false});
   }
 
-  sendEmail = async(event) => {
-    try {
-      event.preventDefault();
+  // EmailJS function
+  sendEmail = event => {
+    event.preventDefault();
 
-      const { form } = this.state;
+    const { form } = this.state;
+
+    const templateParams = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
   
-      const templateParams = {
-        name: form.name.value,
-        email: form.email.value,
-        message: form.message.value
-      }
-    
-      if (this.state.isValid) {
-        emailjs.send('gmail', templateKey, templateParams, userKey);
+    if (this.state.isValid) {
+      emailjs.send('gmail', templateKey, templateParams, userKey).then(resp => resp, error => {
+        this.setState({error: error});
         this.clearInputFields();
         this.showModal();
-      }
-    
-    } catch (error) {
-      console.log(error);
+      });
+      this.clearInputFields();
+      this.showModal();
     }
   }
 
@@ -116,7 +120,7 @@ class Contact extends Component {
       <> 
         <Modal emailSent={this.state.emailSent}>
           <VscChromeClose onClick={this.closeModal}/>
-          <p>Thanks for reaching out!</p>
+          <p>{this.state.error ? 'There was an issue sending the email.' : 'Thanks for reaching out!'}</p>
         </Modal>
         <div className={ContactStyles.Contact}>
           <h1>Contact</h1>
