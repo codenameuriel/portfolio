@@ -22,6 +22,7 @@
   color: black;
   border-bottom: 4px solid black;
   margin-left: 80px;
+  display: inline-table;
 }
 
 .Blog:hover {
