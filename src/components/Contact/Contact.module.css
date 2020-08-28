@@ -121,7 +121,8 @@
 }
 
 .Icons {
-  margin-top: 225px;
+  margin-top: 200px;
   margin-right: 120px;
   margin-right: 850px;
+  display: inline-flex;
 }
