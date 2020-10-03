@@ -12,6 +12,7 @@ class Blogs extends Component {
 
   componentDidMount() {
     this.getBlogs();
+    console.log(this.state.blogs);
   }
 
   blockDragNDrop = event => {
@@ -22,8 +23,6 @@ class Blogs extends Component {
     try {
       const data = await mediumAxios.get(`codenameuriel/medium/${mediumKey}`);
 
-      console.log(data.data);
-      
       this.setState({
         blogs: data.data
       });
@@ -35,8 +34,19 @@ class Blogs extends Component {
 
   parseImages() {
     let images = this.state.blogs.map(blog => {
-      let figureElementArr = blog['content:encoded'].split('</figure>');
-      let imageElementArr = figureElementArr[0].split('<figure>');
+      let figureElementArr;
+      let imageElementArr;
+
+      if (blog['content:encoded']) {
+        figureElementArr = blog['content:encoded'].split('</figure>');
+        imageElementArr = figureElementArr[0].split('<figure>');
+      }
+      
+      if (blog['content']) {
+        figureElementArr = blog['content'].split('</a>');
+        imageElementArr = figureElementArr[0].split('-2">');
+      }
+    
       return imageElementArr[1];
     });
 
@@ -75,6 +85,7 @@ class Blogs extends Component {
   }
 
   render() {
+    this.parseImages();
     return (
       <div>
         <h2>Blogs</h2>

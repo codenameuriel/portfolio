@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <header className={NavbarStyles.Navbar}>
       <div className={NavbarStyles.Logo}>
-        <Logo />
+        {/* <Logo /> */}
       </div>
       <nav>
         <NavItems />
