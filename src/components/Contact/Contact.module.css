@@ -5,6 +5,10 @@
   flex-flow: column;
 }
 
+.Contact h1 {
+  font-size: 40px;
+}
+
 .MainContainer {
   display: flex;
   flex-flow: row;
@@ -12,7 +16,8 @@
 
 .MainContainer hr {
   margin-top: 25px;
-  border-color: #56e133;
+  /* border-color: #56e133; */
+  border-color: #26de81;
   margin-left: 50px;
 }
 
@@ -53,7 +58,8 @@
 }
 
 .Contact button {
-  background-color: #24ac03;
+  /* background-color: #24ac03; */
+  background-color: #26de81;
   color: white;
   border: none;
   padding: 10px;
@@ -63,7 +69,8 @@
 }
 
 .Contact button:hover {
-  background-color: #56e133;
+  /* background-color: #56e133; */
+  background-color: #16fe8a;
   color: #fffbfb;
   cursor: pointer;
 }
@@ -86,19 +93,22 @@
 .Linkedin {
   height: 50px;
   width: 50px;
-  color: #24ac03;
+  /* color: #24ac03; */
+  color: #26de81;
   margin-right: 15px;
   /* margin-left: -100px; */
 }
 
 .Linkedin:hover, .Github:hover {
-  color: #56e133;
+  /* color: #56e133; */
+  color: #16fe8a;
 }
 
 .Github {
   height: 50px;
   width: 50px;
-  color: #24ac03;
+  /* color: #24ac03; */
+  color: #26de81;
 }
 
 .Info {
@@ -106,16 +116,17 @@
   flex-flow: column;
   width: 60%;
   padding: 0 50px;
+  line-height: 145%;
 }
 
 .Info h3 {
   margin-top: 40px;
-  font-size: 24px;
+  font-size: 25px;
   text-align: center;
 }
 
 .Info p {
-  font-size: 22px;
+  font-size: 18px;
   width: 95%;
   text-align: left;
 }

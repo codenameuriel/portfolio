@@ -20,7 +20,8 @@
 }
 
 .Modal svg {
-  color: #24ac03;
+  /* color: #24ac03; */
+  color: #26de81;
   margin-left: 550px;
   width: 25px;
   height: 25px;
@@ -28,5 +29,6 @@
 
 .Modal svg:hover {
   cursor: pointer;
-  color:#56e133;
+  /* color:#56e133; */
+  color: #16fe8a;
 }

@@ -6,7 +6,7 @@
 
 .ErrorPage img {
   width: 2%;
-  margin-left: 1%;
+  margin-left: 2%;
 
   margin-top: 15px;
   margin-bottom: 25px;
@@ -14,7 +14,7 @@
 }
 
 .ErrorPage p {
-  color: #56e133;
+  color:#26de81;
   position: fixed;
 }
 

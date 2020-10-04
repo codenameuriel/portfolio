@@ -22,5 +22,6 @@
 }
 
 .Logo:hover {
-  border-bottom: 1px solid #56e133;
+  /* border-bottom: 1px solid #56e133; */
+  border-bottom: 1px solid #26de81;
 }

@@ -9,12 +9,13 @@
 
 .Title {
   color: #e9e9e9;
-  font-size: 35px;
+  font-size: 40px;
   margin-bottom: 40px;
   text-align: center;
 }
 
 .Demo h3 {
+  font-size: 25px;
   margin-bottom: 35px;
 }
 
@@ -33,8 +34,10 @@
 
 .Demo p {
   text-align: left;
+  font-size: 16px;
+  line-height: 145%;
 }
 
 .Demo:hover {
-  border-bottom: 2px solid #56e133;
+  border-bottom: 2px solid #26de81;
 }
