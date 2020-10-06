@@ -5,6 +5,7 @@ import NavItem from '../NavItem/NavItem';
 const NavItems = () => {
   return (
     <ul className={NavItemsStyles.NavItems}>
+      <NavItem link="/">Home</NavItem>
       <NavItem link="/projects">Projects</NavItem>
       <NavItem link="/blogs">Blogs</NavItem>
       <NavItem link="/aboutme">About Me</NavItem>
