@@ -1,7 +1,7 @@
 .NavItems {
-  margin-top: 19px;
+  margin-top: 5%;
   list-style: none;
   display: flex;
-  align-items: center;
-  height: 100%;
+  /* align-items: center; */
+  /* height: 100%; */
 }

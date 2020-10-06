@@ -1,21 +1,16 @@
 .ErrorPage {
-  color: #e9e9e9;
   text-align: center;
-  font-size: 25px;
+  margin-top: 23%;
 }
 
-.ErrorPage img {
-  width: 2%;
-  margin-left: 2%;
-
-  margin-top: 15px;
-  margin-bottom: 25px;
-  margin-right: -450px;
+.ErrorPage h1 {
+  font-size: 250%;
 }
 
 .ErrorPage p {
   color:#26de81;
-  position: fixed;
+  text-align: center;
+  font-size: 125%;
 }
 
 .Container {

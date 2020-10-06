@@ -1,14 +1,30 @@
-body {
+* {
   margin: 0;
-  font-family: 'Noto Sans JP', 'Anaheim', sans-serif, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Noto Sans JP', 'Anaheim', sans-serif;
+}
+
+html h1, h2, h3 {
+  font-weight: 400;
+}
+
+html p {
+  font-weight: 100;
+  word-spacing: 3px;
+  letter-spacing: 1px;
+}
+
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(10, 10, 10);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

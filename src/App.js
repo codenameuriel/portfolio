@@ -1,9 +1,9 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Layout from './hoc/Layout/Layout';
-import HomePage from './components/HomePage/HomePage';
 import AboutMe from './components/AboutMe/AboutMe';
+import LandingPage from './components/LandingPage/LandingPage';
 
 // lazy loading
 const AsyncBlogs = asyncComponent(() => {
@@ -26,13 +26,12 @@ const App = () => {
   return (
     <div>
       <Layout>
-        <HomePage />
         <Switch>
           <Route path="/contact" component={AsyncContact}/>
           <Route path="/aboutme" component={AboutMe}/>
           <Route path="/blogs" component={AsyncBlogs}/>
           <Route path="/projects" component={AsyncProjectDemos}/>
-          <Redirect exact from="/" to="/aboutme"/>
+          <Route exact path="/" component={LandingPage}/>
           <Route component={AsyncErrorPage}/>
         </Switch>
       </Layout>

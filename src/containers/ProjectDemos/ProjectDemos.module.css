@@ -1,43 +1,43 @@
 .ProjectDemos {
   display: flex;
-  color: #e9e9e9;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
+  flex-direction: column;
 }
 
 .Title {
-  color: #e9e9e9;
-  font-size: 40px;
-  margin-bottom: 40px;
+  color: #26de81;
+  font-size: 200%;
+  margin-top: 7%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
 .Demo h3 {
-  font-size: 25px;
-  margin-bottom: 35px;
+  font-size: 125%;
 }
 
 .Demo {
-  width: 26%;
+  width: 40%;
+  margin-bottom: 5%;
   text-align: center;
-  border-bottom: 2px solid rgb(10, 10, 10);
-  margin-right: 60px;
-  margin-left: 60px;
-  margin-bottom: 25px;
+  padding-bottom: 2%;
+  border-bottom: 1px solid rgb(10, 10, 10);
+  align-self: center;
+  transition: border-bottom 0.2s;
 }
 
 .Demo iframe {
   width: 100%;
+  margin-top: 3%;
 }
 
 .Demo p {
+  width: 100%;
+  margin-top: 5%;
   text-align: left;
-  font-size: 16px;
+  font-size: 90%;
   line-height: 145%;
 }
 
 .Demo:hover {
-  border-bottom: 2px solid #26de81;
+  border-bottom: 1px solid #26de81;
 }

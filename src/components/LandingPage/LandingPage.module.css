@@ -1,0 +1,30 @@
+.LandingPage {
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../../assets/images/LandingPageImage.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.Content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  text-align: center;
+}
+
+.Content h1 {
+  font-size: 225%;
+  text-transform: uppercase;
+}
+
+.Content p {
+  font-size: 115%;
+  color: #26de81;
+}
+
+.Content img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}

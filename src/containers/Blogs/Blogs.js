@@ -74,7 +74,7 @@ class Blogs extends Component {
             <div key={blog.isoDate} className={BlogsStyles.Blog}>
               <h3>{blog.title}</h3>
               <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>
-              <p><strong>Published: {dates[index]}</strong></p>
+              <p>Published: {dates[index]}</p>
             </div>
           );
         })
@@ -88,7 +88,7 @@ class Blogs extends Component {
     this.parseImages();
     return (
       <div>
-        <h2>Blogs</h2>
+        <h2 className={BlogsStyles.Title}>Blogs</h2>
         <div className={BlogsStyles.Blogs}>
           {this.renderBlogs()}
         </div>
