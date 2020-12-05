@@ -20,7 +20,7 @@
   margin-bottom: 5%;
   text-align: center;
   padding-bottom: 2%;
-  border-bottom: 1px solid rgb(10, 10, 10);
+  border-bottom: 1px solid transparent;
   align-self: center;
   transition: border-bottom 0.2s;
 }

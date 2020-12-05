@@ -1,9 +1,11 @@
 .Navbar {
   height: 8%;
+  /* height: auto; */
   width: 100%;
   position: fixed;
   background-color: black;
-  display: flex;
+  display: flex; 
   justify-content: space-between;
   align-items: center;
+  /* display: table; */
 }

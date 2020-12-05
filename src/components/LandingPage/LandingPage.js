@@ -2,10 +2,6 @@ import React from 'react';
 import LandingPageStyles from './LandingPage.module.css';
 
 const LandingPage = () => {
-  // const blockDragNDrop = event => {
-  //   event.preventDefault();
-  // }
-
   return (
     <div className={LandingPageStyles.LandingPage}>
       <div className={LandingPageStyles.Content}>

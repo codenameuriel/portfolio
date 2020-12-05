@@ -1,4 +1,5 @@
 .NavItem {
+  /* margin-right: 30px; */
   margin: 10px 30px;
   padding-bottom: 35px;
   font-size: 110%;
@@ -6,7 +7,7 @@
 
 .NavItem a {
   color: #fff;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid transparent;
   text-decoration: none;
   width: 100%;
   padding-bottom: 2%;
