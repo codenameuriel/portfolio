@@ -1,8 +1,6 @@
 .NavItem {
-  /* margin-right: 30px; */
-  margin: 10px 30px;
-  padding-bottom: 35px;
-  font-size: 110%;
+  /* margin: 10px 30px;
+  font-size: 100%; */
 }
 
 .NavItem a {
@@ -17,4 +15,12 @@
 .NavItem a:hover, .NavItem a:active,
 .NavItem a.active {
   border-bottom: 1px solid #26de81;
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .NavItem {
+    margin: 10px 30px;
+    font-size: 105%;
+  }
 }

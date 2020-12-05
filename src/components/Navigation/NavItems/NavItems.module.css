@@ -1,6 +1,14 @@
 .NavItems {
-  margin-top: 5%;
-  list-style: none;
   display: flex;
-  /* background-color: green; */
+  list-style: none;
+  width: 75%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* mobile */
+@media (max-width: 799px) {
+  .NavItems {
+    display: none;
+  }
 }

@@ -1,11 +1,21 @@
-.Navbar {
-  height: 8%;
-  /* height: auto; */
-  width: 100%;
-  position: fixed;
+.Header {
+  display: flex;
+  height: 8vh;
   background-color: black;
-  display: flex; 
-  justify-content: space-between;
-  align-items: center;
-  /* display: table; */
+}
+
+.Nav {
+  width: 100%;
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .Header {
+    height: 8vh;
+  }
+
+  .Nav {
+    margin-top: 10px;
+    height: 110%;
+  }
 }
