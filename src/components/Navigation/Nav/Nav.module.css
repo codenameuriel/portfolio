@@ -1,21 +1,10 @@
-.Header {
-  display: flex;
-  height: 8vh;
-  background-color: black;
-}
-
 .Nav {
-  width: 100%;
+  display: flex;
 }
 
-/* desktop */
-@media (min-width: 800px) {
-  .Header {
-    height: 8vh;
-  }
-
+/* mobile */
+@media (max-width: 799px) {
   .Nav {
-    margin-top: 10px;
-    height: 110%;
+    height: 50%;
   }
 }

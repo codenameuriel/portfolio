@@ -10,15 +10,24 @@ import NavItems from '../../components/Navigation/NavItems/NavItems';
 const Layout = props => {
   const [ showSideDrawer, setShowSideDrawer ] = useState(false);
 
+  let navItems = <NavItems />;
+  // mobile view
+  if (window.innerWidth < 800) navItems = null;
+
+  let sideDrawer = null;
+  if (showSideDrawer) sideDrawer = (
+    <SideDrawer 
+      showDrawer={showSideDrawer}
+      closeSideDrawer={setShowSideDrawer}/>
+  );
+
   return (
     <div className={LayoutStyles.Layout}>
       <Header>
-        <SideDrawer 
-          showDrawer={showSideDrawer}
-          closeSideDrawer={setShowSideDrawer}/>
+        {sideDrawer}
         <Nav>
-          <DrawerToggle showSideDrawer={setShowSideDrawer}/>
-          {showSideDrawer ? null : <NavItems />}
+          <DrawerToggle showSideDrawer={setShowSideDrawer} />
+          {navItems}
         </Nav>
       </Header>
       <main className={LayoutStyles.Main}>

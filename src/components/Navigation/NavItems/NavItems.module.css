@@ -1,6 +1,8 @@
 .NavItems {
   display: flex;
   list-style: none;
+  margin: 0 auto;
+  /* background-color: rgb(218, 137, 8); */
 }
 
 /* mobile */
@@ -8,12 +10,5 @@
   .NavItems {
     flex-direction: column;
     margin-top: 15px;
-  }
-}
-
-/* desktop */
-@media (min-width: 800px) {
-  .NavItems {
-    justify-content: center; 
   }
 }

@@ -5,6 +5,6 @@ const Nav = props => {
   return (
     <nav className={NavStyles.Nav}>{props.children}</nav>
   );
-}
+};
 
 export default Nav;
