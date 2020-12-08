@@ -1,8 +1,3 @@
-.NavItem {
-  /* margin: 10px 30px;
-  font-size: 100%; */
-}
-
 .NavItem a {
   color: #fff;
   border-bottom: 1px solid transparent;
@@ -28,6 +23,7 @@
 /* mobile */
 @media (max-width: 799px) {
   .NavItem {
+    flex-direction: column;
     margin-bottom: 15px;
   }
 }

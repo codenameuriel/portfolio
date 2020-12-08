@@ -14,7 +14,10 @@ const SideDrawer = props => {
         showBackdrop={props.showDrawer} 
         closeSideDrawer={props.closeSideDrawer}/>
       <div className={drawerStyles.join(' ')}>
-        {props.showDrawer ? <NavItems /> : null}
+        {props.showDrawer ? 
+          <nav>
+            <NavItems />
+          </nav> : null}
       </div>
     </>
   );
