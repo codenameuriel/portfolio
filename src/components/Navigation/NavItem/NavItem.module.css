@@ -24,3 +24,10 @@
     font-size: 105%;
   }
 }
+
+/* mobile */
+@media (max-width: 799px) {
+  .NavItem {
+    margin-bottom: 15px;
+  }
+}

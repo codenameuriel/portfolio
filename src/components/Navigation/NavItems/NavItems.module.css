@@ -1,14 +1,19 @@
 .NavItems {
   display: flex;
   list-style: none;
-  width: 75%;
-  margin: 0 auto;
-  justify-content: center;
 }
 
 /* mobile */
 @media (max-width: 799px) {
   .NavItems {
-    display: none;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .NavItems {
+    justify-content: center; 
   }
 }

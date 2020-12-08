@@ -1,7 +1,7 @@
 import React from 'react';
 import SideDrawerStyles from './SideDrawer.module.css';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-// import SideDrawerNav from '../SideDrawerNav/SideDrawerNav';
+import NavItems from '../NavItems/NavItems';
 
 const SideDrawer = props => {
   let drawerStyles = [ SideDrawerStyles.SideDrawer, SideDrawerStyles.Hide ];
@@ -14,7 +14,7 @@ const SideDrawer = props => {
         showBackdrop={props.showDrawer} 
         closeSideDrawer={props.closeSideDrawer}/>
       <div className={drawerStyles.join(' ')}>
-        {/* <SideDrawerNav closeSideDrawer={props.close}/> */}
+        {props.showDrawer ? <NavItems /> : null}
       </div>
     </>
   );

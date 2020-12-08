@@ -20,7 +20,7 @@
     left: 0;
     top: 0;
     z-index: 200;
-    background-color: #1c1c34;
+    background-color: black;
     transition: transform 0.3s ease-out;
     padding: 20px;
   }
