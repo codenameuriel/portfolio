@@ -19,9 +19,9 @@
     height: 100%;
     left: 0;
     top: 0;
-    z-index: 200;
+    z-index: 100;
     background-color: black;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.4s ease-out;
     padding: 20px;
   }
 }
@@ -36,10 +36,10 @@
     height: 100%;
     left: 0;
     top: 0;
-    z-index: 200;
+    z-index: 100;
     background-color: black;
     padding: 20px;
     box-sizing: border-box;
-    transition: transform 0.3s ease-out;
+    transition: transform 0.4s ease-out;
   }
 }

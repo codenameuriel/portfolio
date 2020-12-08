@@ -14,17 +14,12 @@ const Layout = props => {
   // mobile view
   if (window.innerWidth < 800) navItems = null;
 
-  let sideDrawer = null;
-  if (showSideDrawer) sideDrawer = (
-    <SideDrawer 
-      showDrawer={showSideDrawer}
-      closeSideDrawer={setShowSideDrawer}/>
-  );
-
   return (
     <div className={LayoutStyles.Layout}>
       <Header>
-        {sideDrawer}
+        <SideDrawer 
+          showDrawer={showSideDrawer}
+          closeSideDrawer={setShowSideDrawer}/>
         <Nav>
           <DrawerToggle showSideDrawer={setShowSideDrawer} />
           {navItems}
