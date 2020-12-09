@@ -10,7 +10,7 @@ import NavItems from '../../components/Navigation/NavItems/NavItems';
 const Layout = props => {
   const [ showSideDrawer, setShowSideDrawer ] = useState(false);
 
-  let navItems = <NavItems />;
+  let navItems = <NavItems closeSideDrawer={null}/>;
   // mobile view
   if (window.innerWidth < 800) navItems = null;
 

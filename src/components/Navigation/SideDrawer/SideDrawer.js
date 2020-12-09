@@ -9,9 +9,11 @@ const SideDrawer = props => {
 
   if (props.showDrawer) drawerStyles = [SideDrawerStyles.SideDrawer, SideDrawerStyles.Show];
 
+  const { closeSideDrawer } = props;
+
   let nav = (
     <Nav>
-      <NavItems />
+      <NavItems closeSideDrawer={closeSideDrawer}/>
     </Nav>
   );
 
