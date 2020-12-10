@@ -8,22 +8,28 @@
 .Content {
   width: 100%;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -100%);
   text-align: center;
 }
 
 .Content h1 {
-  font-size: 130%;
+  font-size: 115%;
   text-transform: uppercase;
 }
 
 .Content p {
   width: 80%;
-  font-size: 75%;
+  font-size: 70%;
   color: #26de81;
   margin: 0 auto;
+}
+
+img {
+  width: auto;
+  height: 105px;
+  border-radius: 100%;
 }
 
 /* desktop */
@@ -35,15 +41,19 @@
 
   .Content {
     position: absolute;
-    top: 40%;
+    top: 55%;
     left: 50%;
   }
 
   .Content h1 {
-    font-size: 225%;
+    font-size: 200%;
   }
 
   .Content p {
-    font-size: 115%;
+    font-size: 110%;
+  }
+
+  img {
+    height: 150px;
   }
 }

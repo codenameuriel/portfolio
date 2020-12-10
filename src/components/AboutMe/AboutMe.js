@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePicture from '../../assets/images/FullSizeRender.jpeg';
+import ProfilePicture from '../../assets/images/profile.jpeg';
 import AboutMeStyles from './AboutMe.module.css';
 
 const AboutMe = () => {
