@@ -151,7 +151,7 @@ class Contact extends Component {
                 <button onClick={this.sendEmail} disabled={!this.state.isValid}>Send</button>
               </form>
             </div>
-            <hr/>
+            {window.innerWidth > 799 ? <hr/> : null}
             <div className={ContactStyles.Info}>
               <h3>Thanks for checking out my portfolio</h3>
               <p>
