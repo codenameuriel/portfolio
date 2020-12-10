@@ -4,6 +4,7 @@ import { youtubeAxios } from '../../axios'
 import parse from 'html-react-parser';
 import ProjectDemosStyles from './ProjectDemos.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
 class ProjectDemos extends Component {
   state = {
@@ -31,8 +32,70 @@ class ProjectDemos extends Component {
 
   renderDemos() {
     let demos = <Spinner />;
+    const techStacks = [
+      {
+        name: 'Flatiron Overflow',
+        frontend: 'Vanilla JavaScript',
+        backend: 'Ruby on Rails API',
+        database: 'PostgreSQL',
+        mapper: 'Active Record',
+        libraries: [],
+        apis: []
+      },
+      {
+        name: 'Sugar Lips Cupcakes',
+        frontend: 'React',
+        backend: 'Ruby on Rails API',
+        database: 'PostgreSQL',
+        mapper: 'Active Record',
+        libraries: [],
+        apis: []
+      },
+      {
+        name: 'Plugged',
+        frontend: 'React',
+        backend: 'Ruby on Rails API',
+        database: 'PostgreSQL',
+        mapper: 'Active Record',
+        libraries: ['Axios'],
+        apis: ['News API']
+      },
+      {
+        name: 'Burger App',
+        frontend: 'React',
+        backend: 'Google Firebase',
+        database: 'Google Firebase',
+        mapper: null,
+        libraries: ['Redux', 'Redux Thunk', 'Axios'],
+        apis: []
+      }
+    ];
 
-    if (this.state.demos.length > 0) {
+    const githubLinks = [
+      {
+        name: 'Flatiron Overflow',
+        frontend: 'https://github.com/CBreakr/mod3_flatoverflow_client',
+        backend: 'https://github.com/CBreakr/mod3_flatoverflow_server'
+      },
+      {
+        name: 'Sugar Lips Cupcakes',
+        frontend: 'https://github.com/codenameuriel/mod4-sugarlips_cupcakes-client',
+        backend: 'https://github.com/codenameuriel/mod4-sugarlips_cupcakes-server'
+      },
+      {
+        name: 'Plugged',
+        frontend: 'https://github.com/codenameuriel/plugged-client',
+        backend: 'https://github.com/codenameuriel/plugged-server'
+      },
+      {
+        name: 'Burger App',
+        frontend: 'https://github.com/codenameuriel/plugged-server',
+        backend: ''
+      }
+    ]
+
+    // desktop view
+    if (this.state.demos.length > 0 && window.innerWidth > 799) {
       demos = (
         this.state.demos.map(demo => {
           return (
@@ -44,18 +107,38 @@ class ProjectDemos extends Component {
           );
         })
       );
+      // mobile view
+    } else {
+      demos = (
+        this.state.demos.map((demo, index) => {
+          const demoData = {
+            key: demo.id,
+            title: demo.snippet.title,
+            video: parse(demo.player.embedHtml),
+            desc: demo.snippet.description,
+            tech: techStacks[index],
+            github: githubLinks[index]
+          };
+
+          return <ProjectCard demoData={demoData} />
+        })
+      );
     }
 
-    return demos;
+    return (
+      <div className={ProjectDemosStyles.ProjectDemos}>
+        {demos}
+      </div>
+    );
   }
+
+
 
   render() {
     return (
       <div>
         <h2 className={ProjectDemosStyles.Title}>Projects</h2>
-        <div className={ProjectDemosStyles.ProjectDemos}>
-          {this.renderDemos()}
-        </div>
+        {this.renderDemos()}
       </div>
     );
   }

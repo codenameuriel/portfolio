@@ -1,0 +1,70 @@
+.ProjectCard {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(24, 24, 24);
+  border-radius: 5px;
+  width: 95%;
+  margin: 0 auto 25px auto;
+  padding: 10px;
+}
+
+.Project, .Info {
+  display: flex;
+  flex-direction: column;
+}
+
+.Project {
+  text-align: center;
+}
+
+.Info {
+  margin-top: 5px;
+}
+
+.Info h3 {
+  font-size: 75%;
+  color: #26de81;
+}
+
+.Info p {
+  font-size: 50%;
+}
+
+.Project h1 {
+  font-size: 80%;
+  margin-bottom: 5px;
+}
+
+iframe {
+  width: 100%;
+  height: 50%;
+}
+
+.Description {
+  margin-bottom: 10px;
+}
+
+.TechStack {
+  display: flex;
+  flex-direction: column;
+}
+
+.TechStack li {
+  width: 100%;
+  margin-bottom: 3px;
+  list-style: none;
+}
+
+.TechStack li p span, .Separator {
+  color: #5db98b;
+}
+
+.GithubTitle {
+  margin-top: 10px;
+}
+
+.Github span a {
+  color: white;
+  text-decoration: none;
+  font-size: 55%;
+}
