@@ -44,3 +44,11 @@
 .Blog p {
   font-size: 85%;
 }
+
+/* mobile */
+@media (max-width: 799px) {
+  .Title {
+    font-size: 125%;
+    margin-top: 5%;
+  }
+}

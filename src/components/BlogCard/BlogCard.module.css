@@ -1,0 +1,50 @@
+.BlogCard {
+  display: flex;
+  background-color: rgb(24, 24, 24);
+  border-radius: 5px;
+  width: 95%;
+  margin: 0 auto 25px auto;
+  padding: 10px;
+}
+
+.BlogCard h3 {
+  font-size: 75%;
+}
+
+.Blog, .Snippet {
+  display: flex;
+  flex-direction: column;
+}
+
+.Blog {
+  width: 60%;
+  align-items: center;
+  text-align: center;
+}
+
+.Snippet {
+  width: 40%;
+}
+
+.Blog p, .Snippet p {
+  font-size: 50%;
+}
+
+.Blog img {
+  height: 150px;
+  width: 150px;
+}
+
+.Snippet h3 {
+  color: #26de81;
+}
+
+.Blog h3 {
+  margin-bottom: 5px;
+  width: 90%;
+}
+
+.Snippet a {
+  text-decoration: none;
+  color: #5db98b;
+}

@@ -44,7 +44,7 @@ class ProjectDemos extends Component {
       },
       {
         name: 'Sugar Lips Cupcakes',
-        frontend: 'React',
+        frontend: 'React JavaScript',
         backend: 'Ruby on Rails API',
         database: 'PostgreSQL',
         mapper: 'Active Record',
@@ -53,7 +53,7 @@ class ProjectDemos extends Component {
       },
       {
         name: 'Plugged',
-        frontend: 'React',
+        frontend: 'React JavaScript',
         backend: 'Ruby on Rails API',
         database: 'PostgreSQL',
         mapper: 'Active Record',
@@ -62,7 +62,7 @@ class ProjectDemos extends Component {
       },
       {
         name: 'Burger App',
-        frontend: 'React',
+        frontend: 'React JavaScript',
         backend: 'Google Firebase',
         database: 'Google Firebase',
         mapper: null,
@@ -108,7 +108,7 @@ class ProjectDemos extends Component {
         })
       );
       // mobile view
-    } else {
+    } else if (this.state.demos.length > 0 && window.innerWidth < 800) {
       demos = (
         this.state.demos.map((demo, index) => {
           const demoData = {
@@ -120,7 +120,7 @@ class ProjectDemos extends Component {
             github: githubLinks[index]
           };
 
-          return <ProjectCard demoData={demoData} />
+          return <ProjectCard demoData={demoData} />;
         })
       );
     }

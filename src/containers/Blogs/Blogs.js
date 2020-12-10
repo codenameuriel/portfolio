@@ -4,6 +4,7 @@ import { mediumKey } from '../../key';
 import parse from 'html-react-parser';
 import BlogsStyles from './Blogs.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
+import BlogCard from '../../components/BlogCard/BlogCard';
 
 class Blogs extends Component {
   state = {
@@ -12,7 +13,6 @@ class Blogs extends Component {
 
   componentDidMount() {
     this.getBlogs();
-    console.log(this.state.blogs);
   }
 
   blockDragNDrop = event => {
@@ -67,7 +67,7 @@ class Blogs extends Component {
     let images = this.parseImages();
     let blogs = <Spinner />;
 
-    if (this.state.blogs.length > 0) {
+    if (this.state.blogs.length > 0 && window.innerWidth > 799) {
       blogs = (
         this.state.blogs.map((blog, index) => {
           return (
@@ -77,6 +77,26 @@ class Blogs extends Component {
               <p>Published: {dates[index]}</p>
             </div>
           );
+        })
+      );
+    } else if (this.state.blogs.length > 0 && window.innerWidth < 800) {
+      blogs = (
+        this.state.blogs.map((blog, index) => {
+          const snip = blog.contentSnippet.split('Continue')[0];
+          const specialChars = snip.slice(snip.length - 1)
+          const continueSnip = blog.contentSnippet.split(specialChars)[1];
+          const formattedSnip = snip.slice(0, snip.length - 1) + '...';
+          const blogData = {
+            key: blog.isoDate,
+            title: blog.title,
+            link: blog.guid,
+            image: parse(images[index]),
+            published: dates[index],
+            snippet: formattedSnip,
+            continueSnip
+          };
+
+          return <BlogCard blogData={blogData} />;
         })
       );
     }
