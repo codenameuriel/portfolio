@@ -11,37 +11,6 @@
   text-align: center;
 }
 
-.Demo h3 {
-  font-size: 125%;
-}
-
-.Demo {
-  width: 40%;
-  margin-bottom: 5%;
-  text-align: center;
-  padding-bottom: 2%;
-  border-bottom: 1px solid transparent;
-  align-self: center;
-  transition: border-bottom 0.2s;
-}
-
-.Demo iframe {
-  width: 100%;
-  margin-top: 3%;
-}
-
-.Demo p {
-  width: 100%;
-  margin-top: 5%;
-  text-align: left;
-  font-size: 90%;
-  line-height: 145%;
-}
-
-.Demo:hover {
-  border-bottom: 1px solid #26de81;
-}
-
 /* mobile */
 @media (max-width: 799px) {
   .Title {

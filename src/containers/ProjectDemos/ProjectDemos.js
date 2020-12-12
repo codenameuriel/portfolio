@@ -32,6 +32,7 @@ class ProjectDemos extends Component {
 
   renderDemos() {
     let demos = <Spinner />;
+
     const techStacks = [
       {
         name: 'Flatiron Overflow',
@@ -94,21 +95,7 @@ class ProjectDemos extends Component {
       }
     ]
 
-    // desktop view
-    if (this.state.demos.length > 0 && window.innerWidth > 799) {
-      demos = (
-        this.state.demos.map(demo => {
-          return (
-            <div className={ProjectDemosStyles.Demo} key={demo.id}>
-              <h3>{demo.snippet.title}</h3>
-              {parse(demo.player.embedHtml)}
-              <p>{demo.snippet.description}</p>
-            </div>
-          );
-        })
-      );
-      // mobile view
-    } else if (this.state.demos.length > 0 && window.innerWidth < 800) {
+    if (this.state.demos.length > 0) {
       demos = (
         this.state.demos.map((demo, index) => {
           const demoData = {
@@ -125,18 +112,12 @@ class ProjectDemos extends Component {
       );
     }
 
-    return (
-      <div className={ProjectDemosStyles.ProjectDemos}>
-        {demos}
-      </div>
-    );
+    return demos;
   }
-
-
 
   render() {
     return (
-      <div>
+      <div className={ProjectDemosStyles.ProjectDemos}>
         <h2 className={ProjectDemosStyles.Title}>Projects</h2>
         {this.renderDemos()}
       </div>

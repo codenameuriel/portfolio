@@ -40,27 +40,23 @@ const ProjectCard = props => {
   };
 
   const renderGithubLinks = () => {
-    let link;
+    let links;
 
     if (!github.backend) {
-      link = (
+      links = (
         <span>
           <a href={github.frontend}>Client</a>
         </span>
       );
     } else {
-      link = (
+      links = (
         <span>
           <a href={github.frontend}>Client</a> <span className={ProjectCardStyles.Separator}>|</span> <a href={github.backend}>Server</a>
         </span>
       );
     }
 
-    return (
-      <>
-        {link}
-      </>
-    )
+    return <>{links}</>;
   };
 
   return (
@@ -70,15 +66,21 @@ const ProjectCard = props => {
         {video}
       </div>
       <div className={ProjectCardStyles.Info}>
-        <h3>Description</h3>
-        <p className={ProjectCardStyles.Description}>{desc}</p>
-        <h3>Tech Stack</h3>
-        <ul className={ProjectCardStyles.TechStack}>
-          {renderTechStack()}
-        </ul>
-        <h3 className={ProjectCardStyles.GithubTitle}>GitHub</h3>
+        <div className={ProjectCardStyles.Description}>
+          <h3>Description</h3>
+          <p>{desc}</p>
+        </div>
+        <div className={ProjectCardStyles.TechStack}>
+          <h3>Tech Stack</h3>
+          <ul>
+            {renderTechStack()}
+          </ul>
+        </div>
         <div className={ProjectCardStyles.Github}>
-          {renderGithubLinks()}
+          <h3>GitHub</h3>
+          <div className={ProjectCardStyles.GithubLinks}>
+            {renderGithubLinks()}
+          </div>
         </div>
       </div>
     </div>

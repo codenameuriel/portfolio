@@ -6,6 +6,8 @@
   width: 95%;
   margin: 0 auto 25px auto;
   padding: 10px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
 }
 
 .Project, .Info {
@@ -40,31 +42,87 @@ iframe {
   height: 50%;
 }
 
-.Description {
+.Description p {
   margin-bottom: 10px;
 }
 
-.TechStack {
+.TechStack ul {
   display: flex;
   flex-direction: column;
 }
 
-.TechStack li {
+.TechStack ul li {
   width: 100%;
   margin-bottom: 3px;
   list-style: none;
 }
 
-.TechStack li p span, .Separator {
+.TechStack ul li p span, .Separator {
   color: #5db98b;
 }
 
-.GithubTitle {
+.Github h3 {
   margin-top: 10px;
 }
 
-.Github span a {
+.GithubLinks span a {
   color: white;
   text-decoration: none;
   font-size: 55%;
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .ProjectCard {
+    flex-direction: row;
+    width: 60%;
+    margin-bottom: 50px;
+  }
+
+  .ProjectCard:hover {
+    border-bottom: 1px solid #26de81;
+  }
+
+  .Project {
+    width: 60%;
+  }
+
+  .Project h1 {
+    font-size: 125%;
+    margin-bottom: 10px;
+  }
+
+  .Info {
+    width: 40%;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  .Info h3 {
+    font-size: 105%;
+  }
+
+  .Info p {
+    font-size: 75%;
+  }
+
+  iframe {
+    height: 300px;
+  }
+
+  .Description, .TechStack, .Github {
+    padding: 5px;
+  }
+
+  .Description {
+    height: 100px;
+  }
+
+  .GithubLinks span a {
+    font-size: 75%;
+  }
+}
+
+.GithubLinks span a:hover {
+  color:  #5db98b;
 }
