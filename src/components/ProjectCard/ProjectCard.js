@@ -4,6 +4,10 @@ import ProjectCardStyles from './ProjectCard.module.css';
 const ProjectCard = props => {
   const { key, title, video, desc, tech, github } = props.demoData;
 
+  const blockDragNDrop = event => {
+    event.preventDefault();
+  }
+
   const renderTechStack = () => {
     let nullDescription;
 
@@ -51,7 +55,7 @@ const ProjectCard = props => {
     } else {
       links = (
         <span>
-          <a href={github.frontend}>Client</a> <span className={ProjectCardStyles.Separator}>|</span> <a href={github.backend}>Server</a>
+          <a href={github.frontend} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>Client</a> <span className={ProjectCardStyles.Separator}>|</span> <a href={github.backend} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>Server</a>
         </span>
       );
     }

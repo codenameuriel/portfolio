@@ -67,19 +67,7 @@ class Blogs extends Component {
     let images = this.parseImages();
     let blogs = <Spinner />;
 
-    if (this.state.blogs.length > 0 && window.innerWidth > 799) {
-      blogs = (
-        this.state.blogs.map((blog, index) => {
-          return (
-            <div key={blog.isoDate} className={BlogsStyles.Blog}>
-              <h3>{blog.title}</h3>
-              <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>
-              <p>Published: {dates[index]}</p>
-            </div>
-          );
-        })
-      );
-    } else if (this.state.blogs.length > 0 && window.innerWidth < 800) {
+    if (this.state.blogs.length > 0) {
       blogs = (
         this.state.blogs.map((blog, index) => {
           const snip = blog.contentSnippet.split('Continue')[0];
@@ -96,7 +84,23 @@ class Blogs extends Component {
             continueSnip
           };
 
-          return <BlogCard blogData={blogData} />;
+          if (window.innerWidth > 799) {
+            return (
+              <div key={blog.isoDate} className={BlogsStyles.Blog}>
+                <div className={BlogsStyles.HoverDescription}>
+                  <div className={BlogsStyles.Snippet}>
+                    <h3>Description</h3>
+                    <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{continueSnip}</a></span></p>
+                   </div>
+                </div>
+                <h3>{blog.title}</h3>
+                <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>
+                <p>Published: {dates[index]}</p>
+              </div>
+            );
+          } else if (window.innerWidth < 800) {
+            return <BlogCard blogData={blogData} />;
+          }
         })
       );
     }
@@ -104,12 +108,21 @@ class Blogs extends Component {
     return blogs;
   }
 
+  renderBlogPageDetails = () => {
+    return window.innerWidth > 799 ? (
+      <div className={BlogsStyles.PageDetails}>
+        <p>Aside from programming, I write blogs on the digital publishing platform Medium to share my knowledge and discoveries. I also keep my portfolio up to date with my latest 10 blogs. To read earlier blogs, please check out my <span><a href="https://codenameuriel28.medium.com/ " target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>Medium</a></span>.</p>
+      </div>
+    ) : null;
+  }
+
   render() {
     this.parseImages();
     return (
-      <div>
+      <div className={BlogsStyles.Blogs}>
         <h2 className={BlogsStyles.Title}>Blogs</h2>
-        <div className={BlogsStyles.Blogs}>
+        {this.renderBlogPageDetails()}
+        <div className={BlogsStyles.BlogsContainer}>
           {this.renderBlogs()}
         </div>
       </div>

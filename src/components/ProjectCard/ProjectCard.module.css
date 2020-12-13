@@ -96,6 +96,8 @@ iframe {
     width: 40%;
     margin-top: 0;
     padding: 10px;
+
+    /* background-color: red; */
   }
 
   .Info h3 {
@@ -112,10 +114,6 @@ iframe {
 
   .Description, .TechStack, .Github {
     padding: 5px;
-  }
-
-  .Description {
-    height: 100px;
   }
 
   .GithubLinks span a {

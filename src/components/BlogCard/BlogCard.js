@@ -1,5 +1,6 @@
 import React from 'react';
 import BlogCardStyles from './BlogCard.module.css';
+import { AiFillInfoCircle } from "react-icons/ai";
 
 const BlogCard = props => {
   const { key, title, link, image, published, snippet, continueSnip } = props.blogData;
@@ -11,7 +12,7 @@ const BlogCard = props => {
   return (
     <div className={BlogCardStyles.BlogCard} key={key}>
       <div className={BlogCardStyles.Blog}>
-        <h3>{title}</h3>
+        <h1>{title} <span><AiFillInfoCircle /></span></h1>
         <a href={link} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{image}</a>
         <p>Published: {published}</p>
       </div>

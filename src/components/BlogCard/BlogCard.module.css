@@ -7,8 +7,12 @@
   padding: 10px;
 }
 
+.BlogCard h1 {
+  font-size: 70%;
+}
+
 .BlogCard h3 {
-  font-size: 75%;
+  font-size: 70%;
 }
 
 .Blog, .Snippet {
