@@ -19,6 +19,11 @@
   text-align: center;
 }
 
+.Title {
+  display: flex;
+  align-self: center;
+}
+
 .Info {
   margin-top: 5px;
 }
@@ -32,9 +37,26 @@
   font-size: 50%;
 }
 
-.Project h1 {
+.Title h1 {
   font-size: 80%;
   margin-bottom: 5px;
+}
+
+.Title a {
+  align-self: center;
+  margin-left: 15px;
+}
+
+.Deployed {
+  background-color: #26de81;
+  border-radius: 5px;
+  padding: 2px;
+  width: auto;
+  height: 22px;
+}
+
+.Deployed:hover {
+  background-color: #5db98b;
 }
 
 iframe {
@@ -96,8 +118,6 @@ iframe {
     width: 40%;
     margin-top: 0;
     padding: 10px;
-
-    /* background-color: red; */
   }
 
   .Info h3 {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectCardStyles from './ProjectCard.module.css';
+import { GrDeploy } from 'react-icons/gr';
 
 const ProjectCard = props => {
   const { key, title, video, desc, tech, github } = props.demoData;
@@ -49,7 +50,7 @@ const ProjectCard = props => {
     if (!github.backend) {
       links = (
         <span>
-          <a href={github.frontend}>Client</a>
+          <a href={github.frontend} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>Client</a>
         </span>
       );
     } else {
@@ -66,7 +67,13 @@ const ProjectCard = props => {
   return (
     <div className={ProjectCardStyles.ProjectCard} key={key}>
       <div className={ProjectCardStyles.Project}>
-        <h1>{title}</h1>
+        <div className={ProjectCardStyles.Title}>
+          <h1>{title}</h1>
+          {tech.deployed ? <a href={tech.deploymentLink} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            onMouseDown={blockDragNDrop}><GrDeploy className={ProjectCardStyles.Deployed}/></a> : null}
+        </div>
         {video}
       </div>
       <div className={ProjectCardStyles.Info}>

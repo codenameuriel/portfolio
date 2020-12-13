@@ -6,6 +6,8 @@ import ProjectDemosStyles from './ProjectDemos.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
 
+import axios from 'axios';
+
 class ProjectDemos extends Component {
   state = {
     demos: []
@@ -41,7 +43,9 @@ class ProjectDemos extends Component {
         database: 'PostgreSQL',
         mapper: 'Active Record',
         libraries: [],
-        apis: []
+        apis: [],
+        deployed: false,
+        deploymentLink: null
       },
       {
         name: 'Sugar Lips Cupcakes',
@@ -50,7 +54,9 @@ class ProjectDemos extends Component {
         database: 'PostgreSQL',
         mapper: 'Active Record',
         libraries: [],
-        apis: []
+        apis: [],
+        deployed: false,
+        deploymentLink: null
       },
       {
         name: 'Plugged',
@@ -59,7 +65,9 @@ class ProjectDemos extends Component {
         database: 'PostgreSQL',
         mapper: 'Active Record',
         libraries: ['Axios'],
-        apis: ['News API']
+        apis: ['News API'],
+        deployed: false,
+        deploymentLink: null
       },
       {
         name: 'Burger App',
@@ -68,7 +76,9 @@ class ProjectDemos extends Component {
         database: 'Google Firebase',
         mapper: null,
         libraries: ['Redux', 'Redux Thunk', 'Axios'],
-        apis: []
+        apis: [],
+        deployed: true,
+        deploymentLink: 'https://burger-app-845dc.firebaseapp.com/'
       }
     ];
 
@@ -90,7 +100,7 @@ class ProjectDemos extends Component {
       },
       {
         name: 'Burger App',
-        frontend: 'https://github.com/codenameuriel/plugged-server',
+        frontend: 'https://github.com/codenameuriel/burger-app',
         backend: ''
       }
     ]
