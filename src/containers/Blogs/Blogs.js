@@ -5,6 +5,7 @@ import parse from 'html-react-parser';
 import BlogsStyles from './Blogs.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import BlogCard from '../../components/BlogCard/BlogCard';
+import { FaBluetooth } from 'react-icons/fa';
 
 class Blogs extends Component {
   state = {
@@ -89,7 +90,7 @@ class Blogs extends Component {
               <div key={blog.isoDate} className={BlogsStyles.Blog}>
                 <div className={BlogsStyles.HoverDescription}>
                   <div className={BlogsStyles.Snippet}>
-                    <h3>Description</h3>
+                    <h3>Snippet</h3>
                     <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{continueSnip}</a></span></p>
                    </div>
                 </div>

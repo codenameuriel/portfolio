@@ -5,8 +5,8 @@
 }
 
 .Blogs img {
-  height: 250px;
   width: auto;
+  padding: 15px;
 }
 
 .PageDetails {
@@ -61,6 +61,7 @@
 
 .Blog h3 {
   font-size: 110%;
+  width: 85%;
   margin: 15px 0 25px 0;
 }
 
@@ -75,14 +76,13 @@
 
 .HoverDescription {
   display: none;
-  margin-top: 18px;
   background-color: black;
   opacity: .9;
-  height: 40%;
-  width: 35%;
+  padding: 15px;
+  width: 30%;
+  margin: auto;
   position: absolute;
   z-index: 1;
-  border-radius: 5px;
 }
 
 .Snippet {
