@@ -10,8 +10,8 @@ const AsyncBlogs = asyncComponent(() => {
   return import('./containers/Blogs/Blogs');
 });
 
-const AsyncProjectDemos = asyncComponent(() => {
-  return import('./containers/ProjectDemos/ProjectDemos.js');
+const AsyncProjects = asyncComponent(() => {
+  return import('./containers/Projects/Projects.js');
 });
 
 const AsyncErrorPage = asyncComponent(() => {
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/contact" component={AsyncContact}/>
           <Route path="/aboutme" component={AboutMe}/>
           <Route path="/blogs" component={AsyncBlogs}/>
-          <Route path="/projects" component={AsyncProjectDemos}/>
+          <Route path="/projects" component={AsyncProjects}/>
           <Route exact path="/" component={LandingPage}/>
           <Route component={AsyncErrorPage}/>
         </Switch>

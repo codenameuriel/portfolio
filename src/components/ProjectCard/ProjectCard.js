@@ -4,32 +4,27 @@ import { blockDragNDrop } from '../../shared/utils';
 import { GrDeploy } from 'react-icons/gr';
 
 const ProjectCard = props => {
-  const { key, title, video, desc, tech, github } = props.demoData;
+  const { title, video, desc, frontend, backend, mapper, database, libraries, apis, github, deployed, deploymentLink } = props.projectData;
 
   const renderTechStack = () => {
-    let nullDescription;
-
-    for (let key in tech) {
-      if (tech[key] === null || tech[key].length < 1) {
-        nullDescription = 'None';
+    const listValues = obj => {
+      if (obj) {
+        const values = Object.values(obj);
+        return values.reduce((acc, val, idx) => {
+          if (idx !== values.length - 1) return acc + `${val}, `
+          else return acc + val;
+        }, '');
       }
-    }
-
-    const listValues = value => {
-      return value.reduce((acc, val, idx) => {
-        if (idx !== value.length - 1) return acc + `${val}, `
-        else return acc + val;
-      }, '');
     }
 
     return (
       <>
-        <li><p>Frontend: <span>{tech.frontend}</span></p></li>
-        <li><p>Backend: <span>{tech.backend}</span></p></li>
-        <li><p>ORM/ODM: <span>{tech.mapper || nullDescription}</span></p></li>
-        <li><p>Database: <span>{tech.database}</span></p></li>
-        <li><p>Libraries: <span>{listValues(tech.libraries) || nullDescription}</span></p></li>
-        <li><p>APIS: <span>{listValues(tech.apis) || nullDescription}</span></p></li>
+        <li><p>Frontend: <span>{frontend}</span></p></li>
+        <li><p>Backend: <span>{backend}</span></p></li>
+        <li><p>ORM/ODM: <span>{mapper || 'None'}</span></p></li>
+        <li><p>Database: <span>{database}</span></p></li>
+        <li><p>Libraries: <span>{listValues(libraries) || 'None'}</span></p></li>
+        <li><p>APIS: <span>{listValues(apis) || 'None'}</span></p></li>
       </>
     )
   };
@@ -55,11 +50,11 @@ const ProjectCard = props => {
   };
 
   return (
-    <div className={ProjectCardStyles.ProjectCard} key={key}>
+    <div className={ProjectCardStyles.ProjectCard}>
       <div className={ProjectCardStyles.Project}>
         <div className={ProjectCardStyles.Title}>
           <h1>{title}</h1>
-          {tech.deployed ? <a href={tech.deploymentLink} 
+          {deployed ? <a href={deploymentLink} 
             target="_blank" 
             rel="noopener noreferrer" 
             onMouseDown={blockDragNDrop}><GrDeploy className={ProjectCardStyles.Deployed}/></a> : null}
@@ -73,9 +68,7 @@ const ProjectCard = props => {
         </div>
         <div className={ProjectCardStyles.TechStack}>
           <h3>Tech Stack</h3>
-          <ul>
-            {renderTechStack()}
-          </ul>
+          <ul>{renderTechStack()}</ul>
         </div>
         <div className={ProjectCardStyles.Github}>
           <h3>GitHub</h3>
