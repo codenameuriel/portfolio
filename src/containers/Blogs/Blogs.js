@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { mediumAxios } from '../../axios';
 import { mediumKey } from '../../key';
 import parse from 'html-react-parser';
+import { blockDragNDrop } from '../../shared/utils';
 import BlogsStyles from './Blogs.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import BlogCard from '../../components/BlogCard/BlogCard';
@@ -14,10 +15,6 @@ class Blogs extends Component {
 
   componentDidMount() {
     this.getBlogs();
-  }
-
-  blockDragNDrop = event => {
-    event.preventDefault();
   }
 
   async getBlogs() {
@@ -91,7 +88,7 @@ class Blogs extends Component {
                 <div className={BlogsStyles.HoverDescription}>
                   <div className={BlogsStyles.Snippet}>
                     <h3>Snippet</h3>
-                    <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{continueSnip}</a></span></p>
+                    <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
                    </div>
                 </div>
                 <h3>{blog.title}</h3>
@@ -112,7 +109,7 @@ class Blogs extends Component {
   renderBlogPageDetails = () => {
     return window.innerWidth > 799 ? (
       <div className={BlogsStyles.PageDetails}>
-        <p>Aside from programming, I write blogs on Medium to share my knowledge and discoveries. I also keep my portfolio up to date with my latest 10 blogs. To read earlier blogs, please check out my <span><a href="https://codenameuriel28.medium.com/ " target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>Medium</a></span>.</p>
+        <p>Aside from programming, I write blogs on Medium to share my knowledge and discoveries. I also keep my portfolio up to date with my latest 10 blogs. To read earlier blogs, please check out my <span><a href="https://codenameuriel28.medium.com/ " target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>Medium</a></span>.</p>
       </div>
     ) : null;
   }

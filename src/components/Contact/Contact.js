@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContactStyles from './Contact.module.css';
+import { blockDragNDrop } from '../../shared/utils';
 import emailjs from 'emailjs-com';
 import { templateKey, userKey } from '../../key';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -34,10 +35,6 @@ class Contact extends Component {
     isValid: false,
     emailSent: false, 
     error: null
-  }
-
-  blockDragNDrop = event => {
-    event.preventDefault();
   }
 
   showModal() {
@@ -165,11 +162,11 @@ class Contact extends Component {
                 <a 
                   href="https://www.linkedin.com/in/uriel-rodriguez-9ab2946b/" 
                   target="_blank" 
-                  rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin} onMouseDown={this.blockDragNDrop}/></a>
+                  rel="noopener noreferrer"><FaLinkedin className={ContactStyles.Linkedin} onMouseDown={blockDragNDrop}/></a>
                 <a 
                   href="https://github.com/codenameuriel" 
                   target="_blank" 
-                  rel="noopener noreferrer"><FaGithub className={ContactStyles.Github} onMouseDown={this.blockDragNDrop}/></a>
+                  rel="noopener noreferrer"><FaGithub className={ContactStyles.Github} onMouseDown={blockDragNDrop}/></a>
               </div>
             </div>
           </div>

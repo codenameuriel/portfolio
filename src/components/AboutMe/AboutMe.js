@@ -1,12 +1,9 @@
 import React from 'react';
 import ProfilePicture from '../../assets/images/profile.jpeg';
 import AboutMeStyles from './AboutMe.module.css';
+import { blockDragNDrop } from '../../shared/utils';
 
 const AboutMe = () => {
-  const blockDragNDrop = event => {
-    event.preventDefault();
-  }
-
   let bioContent = (
     <div className={AboutMeStyles.BioDiv}>
       <p>

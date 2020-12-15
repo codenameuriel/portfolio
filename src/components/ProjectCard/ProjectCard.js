@@ -1,13 +1,10 @@
 import React from 'react';
 import ProjectCardStyles from './ProjectCard.module.css';
+import { blockDragNDrop } from '../../shared/utils';
 import { GrDeploy } from 'react-icons/gr';
 
 const ProjectCard = props => {
   const { key, title, video, desc, tech, github } = props.demoData;
-
-  const blockDragNDrop = event => {
-    event.preventDefault();
-  }
 
   const renderTechStack = () => {
     let nullDescription;
@@ -19,17 +16,10 @@ const ProjectCard = props => {
     }
 
     const listValues = value => {
-      let values = '';
-
-      value.map((val, index) => {
-        if (index !== value.length - 1) {
-          values += `${val}, `
-        } else {
-          values += val;
-        }
-      });
-
-      return values;
+      return value.reduce((acc, val, idx) => {
+        if (idx !== value.length - 1) return acc + `${val}, `
+        else return acc + val;
+      }, '');
     }
 
     return (

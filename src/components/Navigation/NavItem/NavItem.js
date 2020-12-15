@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import NavItemStyles from './NavItem.module.css';
 
+
 const NavItem = props => {
   const { closeSideDrawer } = props;
 
