@@ -90,11 +90,11 @@ class Blogs extends Component {
   }
 
   renderBlogPageDetails = () => {
-    return window.innerWidth > 799 ? (
+    return (
       <div className={BlogsStyles.PageDetails}>
         <p>Aside from programming, I write blogs on Medium to share my knowledge and discoveries. I also keep my portfolio up to date with my latest 10 blogs. To read earlier blogs, please check out my <span><a href="https://codenameuriel28.medium.com/ " target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>Medium</a></span>.</p>
       </div>
-    ) : null;
+    );
   }
 
   render() {
