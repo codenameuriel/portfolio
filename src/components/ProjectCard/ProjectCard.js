@@ -14,8 +14,8 @@ const ProjectCard = props => {
           if (idx !== values.length - 1) return acc + `${val}, `
           else return acc + val;
         }, '');
-      }
-    }
+      } else return 'None';
+    };
 
     return (
       <>
@@ -23,8 +23,8 @@ const ProjectCard = props => {
         <li><p>Backend: <span>{backend}</span></p></li>
         <li><p>ORM/ODM: <span>{mapper || 'None'}</span></p></li>
         <li><p>Database: <span>{database}</span></p></li>
-        <li><p>Libraries: <span>{listValues(libraries) || 'None'}</span></p></li>
-        <li><p>APIS: <span>{listValues(apis) || 'None'}</span></p></li>
+        <li><p>Libraries: <span>{listValues(libraries)}</span></p></li>
+        <li><p>APIS: <span>{listValues(apis)}</span></p></li>
       </>
     )
   };

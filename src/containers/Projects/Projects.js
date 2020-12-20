@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { youtubeKey } from '../../key';
-import { youtubeAxios } from '../../axios'
 import parse from 'html-react-parser';
+import { firebaseAxios } from '../../axios';
 import ProjectsStyles from './Projects.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import ProjectCard from '../../components/ProjectCard/ProjectCard';
-
-import axios from 'axios';
 
 class Projects extends Component {
   state = {
@@ -17,45 +14,10 @@ class Projects extends Component {
     this.getProjects();
   }
 
-  // componentDidUpdate() {
-  //   this.saveDemo();
-  // }
-
-  // async saveDemo() {
-  //   const data = await axios.get('https://uriels-portfolio.firebaseio.com/projects.json');
-
-  //   // object - Firebase Data
-  //   const projects = data.data;
-
-  //   this.state.demos.forEach((demo, index) => {
-  //     const titleArray = demo.snippet.title.split(' ');
-  //     titleArray[0] = titleArray[0].toLowerCase();
-  //     titleArray.pop();
-  //     const title = titleArray.join('');
-
-  //     console.log(projects[title]);
-
-  //     if (!projects[title].demo) {
-  //       const endpoint = title + '.json';
-
-  //       const saveDemo = { demo };
-
-  //       axios.post('https://uriels-portfolio.firebaseio.com/projects/' + endpoint, saveDemo);
-  //     }
-  //   });
-  // }
-
   async getProjects() {
-    // const demoIds = '_WgXrcOqG3M,gf8-Ui0z7NI,4KLrYPeXw9Q,YA4p08g6QyQ';
-    // const youtubeDemosURL = `videos?id=${demoIds}&part=snippet,player&key=${youtubeKey}`;
-    // const demos = await (await youtubeAxios.get(youtubeDemosURL)).data;
-
     try {
-      // create a projects endpoint
-      const projects = await (await axios.get('https://uriels-portfolio.firebaseio.com/projects.json')).data;
-
-      console.log(projects);
-
+      const projects = await (await firebaseAxios.get('/projects.json')).data;
+      
       this.setState({ projects });
 
     } catch (error) {
@@ -96,7 +58,6 @@ class Projects extends Component {
   }
 
   render() {
-    console.log(this.state.projects);
     return (
       <div className={ProjectsStyles.Projects}>
         <h2 className={ProjectsStyles.Title}>Projects</h2>

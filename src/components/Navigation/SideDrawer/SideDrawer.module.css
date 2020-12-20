@@ -1,5 +1,17 @@
+/* mobile view */
 .SideDrawer {
-  display: none;
+  display: flex;
+  position: fixed;
+  width: 190px;
+  max-width: 70%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background-color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.4s ease-out;
 }
 
 .Show {
@@ -26,20 +38,9 @@
   }
 }
 
-/* portrait mode */
-@media (max-width: 649px) {
+/* desktop view */
+@media (min-width: 800px) {
   .SideDrawer {
-    display: flex;
-    position: fixed;
-    width: 190px;
-    max-width: 70%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    z-index: 100;
-    background-color: black;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: transform 0.4s ease-out;
+    display: none;
   }
 }

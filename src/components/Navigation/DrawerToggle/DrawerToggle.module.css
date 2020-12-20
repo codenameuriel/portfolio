@@ -2,14 +2,14 @@
   display: flex;
   flex-direction: column;
   width: 20%;
-  height: 150%;
+  height: 80%;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: -12px;
+  /* margin-top: -12px; */
 }
 
 .DrawerToggle div {
-  width: 60%;
+  width: 50%;
   height: 2px;
   background-color: #26de81;
 }

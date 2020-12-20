@@ -6,7 +6,6 @@ import { blockDragNDrop } from '../../shared/utils';
 import BlogsStyles from './Blogs.module.css';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import BlogCard from '../../components/BlogCard/BlogCard';
-import { FaBluetooth } from 'react-icons/fa';
 
 class Blogs extends Component {
   state = {
@@ -51,7 +50,7 @@ class Blogs extends Component {
     return images;
   }
 
-  parseDate() {
+  parseDates() {
     let dates = this.state.blogs.map(blog => {
       let dateArr = blog.pubDate.split(' ');
       return `${dateArr[2]} ${dateArr[1]}, ${dateArr[3]}`
@@ -61,7 +60,7 @@ class Blogs extends Component {
   }
 
   renderBlogs() {
-    let dates = this.parseDate();
+    let dates = this.parseDates();
     let images = this.parseImages();
     let blogs = <Spinner />;
 
@@ -85,11 +84,9 @@ class Blogs extends Component {
           if (window.innerWidth > 799) {
             return (
               <div key={blog.isoDate} className={BlogsStyles.Blog}>
-                <div className={BlogsStyles.HoverDescription}>
-                  <div className={BlogsStyles.Snippet}>
-                    <h3>Snippet</h3>
-                    <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
-                   </div>
+                <div className={BlogsStyles.Snippet}>
+                  <h3>Snippet</h3>
+                  <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
                 </div>
                 <h3>{blog.title}</h3>
                 <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>

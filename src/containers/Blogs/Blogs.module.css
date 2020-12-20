@@ -70,31 +70,24 @@
   font-size: 80%;
 }
 
-.Blog:hover > .HoverDescription {
-  display: flex;
-}
-
-.HoverDescription {
+.Snippet {
   display: none;
+  flex-direction: column;
   background-color: black;
   opacity: .9;
   padding: 15px;
-  width: 30%;
-  margin: auto;
+  width: 25%;
   position: absolute;
   z-index: 1;
 }
 
-.Snippet {
+.Blog:hover > .Snippet {
   display: flex;
-  flex-direction: column;
-  width: 85%;
-  justify-content: center;
-  margin: 0 auto;
 }
 
 .Snippet p {
   font-size: 75%;
+  text-align: left;
 }
 
 .Snippet h3 {

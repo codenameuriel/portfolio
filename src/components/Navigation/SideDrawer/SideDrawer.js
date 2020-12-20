@@ -11,24 +11,17 @@ const SideDrawer = props => {
 
   const { closeSideDrawer } = props;
 
-  let nav = (
-    <Nav>
-      <NavItems closeSideDrawer={closeSideDrawer}/>
-    </Nav>
-  );
-
-  // desktop view
-  if (window.innerWidth >= 800) nav = null;
-
   return (
-    <Nav>
+    <>
       <Backdrop 
         showBackdrop={props.showDrawer} 
         closeSideDrawer={props.closeSideDrawer}/>
       <div className={drawerStyles.join(' ')}>
-        {nav}
+        <Nav>
+          <NavItems closeSideDrawer={closeSideDrawer}/>
+        </Nav>
       </div>
-    </Nav>
+    </>
   );
 }
 
