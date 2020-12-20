@@ -81,7 +81,7 @@ class Blogs extends Component {
             continueSnip
           };
 
-          return <BlogCard blogData={blogData} />;
+          return <BlogCard key={blog.isoDate} blogData={blogData} />;
         })
       );
     }
