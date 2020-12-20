@@ -12,8 +12,7 @@ const BlogCard = props => {
         <a href={link} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{image}</a>
         <p>Published: {published}</p>
       </div>
-      <div className={BlogCardStyles.Snippet}>
-        <h3>Description</h3>
+      <div className={BlogCardStyles.MobileSnippet}>
         <p>{snippet}<span><a href={link}>{continueSnip}</a></span></p>
       </div>
     </div>

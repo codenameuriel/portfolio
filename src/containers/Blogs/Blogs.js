@@ -85,7 +85,6 @@ class Blogs extends Component {
             return (
               <div key={blog.isoDate} className={BlogsStyles.Blog}>
                 <div className={BlogsStyles.Snippet}>
-                  <h3>Snippet</h3>
                   <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
                 </div>
                 <h3>{blog.title}</h3>

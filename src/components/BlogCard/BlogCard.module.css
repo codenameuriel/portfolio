@@ -15,7 +15,7 @@
   font-size: 70%;
 }
 
-.Blog, .Snippet {
+.Blog, .MobileSnippet {
   display: flex;
   flex-direction: column;
 }
@@ -26,12 +26,17 @@
   text-align: center;
 }
 
-.Snippet {
+.MobileSnippet {
   width: 40%;
 }
 
-.Blog p, .Snippet p {
+.Blog p, .MobileSnippet p {
   font-size: 50%;
+}
+
+.MobileSnippet p {
+  text-align: left;
+  margin: auto;
 }
 
 .Blog img {
@@ -39,7 +44,7 @@
   width: 150px;
 }
 
-.Snippet h3 {
+.MobileSnippet h3 {
   color: #26de81;
 }
 
@@ -48,7 +53,7 @@
   width: 90%;
 }
 
-.Snippet a {
+.MobileSnippet a {
   text-decoration: none;
   color: #5db98b;
 }
