@@ -7,6 +7,9 @@ const BlogCard = props => {
 
   return (
     <div className={BlogCardStyles.BlogCard} key={key}>
+      <div className={BlogCardStyles.DesktopSnippet}>
+        <p>{snippet}<span><a href={link} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
+      </div>
       <div className={BlogCardStyles.Blog}>
         <h1>{title}</h1>
         <a href={link} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{image}</a>

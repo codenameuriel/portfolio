@@ -81,20 +81,7 @@ class Blogs extends Component {
             continueSnip
           };
 
-          if (window.innerWidth > 799) {
-            return (
-              <div key={blog.isoDate} className={BlogsStyles.Blog}>
-                <div className={BlogsStyles.Snippet}>
-                  <p>{formattedSnip}<span><a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={blockDragNDrop}>{continueSnip}</a></span></p>
-                </div>
-                <h3>{blog.title}</h3>
-                <a href={blog.guid} target="_blank" rel="noopener noreferrer" onMouseDown={this.blockDragNDrop}>{parse(images[index])}</a>
-                <p>Published: {dates[index]}</p>
-              </div>
-            );
-          } else if (window.innerWidth < 800) {
-            return <BlogCard blogData={blogData} />;
-          }
+          return <BlogCard blogData={blogData} />;
         })
       );
     }

@@ -28,6 +28,8 @@
 
 .MobileSnippet {
   width: 40%;
+  padding: 10px;
+  margin: auto;
 }
 
 .Blog p, .MobileSnippet p {
@@ -35,13 +37,12 @@
 }
 
 .MobileSnippet p {
+  font-size: 55%;
   text-align: left;
-  margin: auto;
 }
 
 .Blog img {
-  height: 150px;
-  width: 150px;
+  width: auto;
 }
 
 .MobileSnippet h3 {
@@ -56,4 +57,71 @@
 .MobileSnippet a {
   text-decoration: none;
   color: #5db98b;
+}
+
+/* mobile */
+@media (max-width: 799px) {
+  .DesktopSnippet {
+    display: none;
+  }
+
+  .Blog img {
+    padding: 10px;
+  }
+}
+
+/* desktop */
+@media (min-width: 800px) {
+  .MobileSnippet {
+    display: none;
+  }
+
+  .BlogCard {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 0 1% 3% 1%;
+    padding-bottom: 1%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Blog h1 {
+    font-size: 110%;
+    width: 85%;
+    margin: 0 0 25px 0;
+  }
+  
+  .BlogCard p {
+    font-size: 80%;
+  }
+
+  .DesktopSnippet {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    opacity: .9;
+    padding: 15px;
+    width: 25%;
+    position: absolute;
+    z-index: 1;
+  }
+
+  .BlogCard:hover > .DesktopSnippet {
+    display: flex;
+  }
+
+  .DesktopSnippet p {
+    text-align: left;
+  }
+  
+  .DesktopSnippet p span a {
+    text-decoration: none;
+    color: #26de81;
+  }
+  
+  .DesktopSnippet p span a:hover {
+    text-decoration: none;
+    color: #5db98b;
+  }
 }
