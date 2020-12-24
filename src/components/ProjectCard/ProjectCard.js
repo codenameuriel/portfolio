@@ -59,7 +59,7 @@ const ProjectCard = props => {
             rel="noopener noreferrer" 
             onMouseDown={blockDragNDrop}><GrDeploy className={ProjectCardStyles.Deployed}/></a> : null}
         </div>
-        {!video ? <img src={photo} alt="Fingerz Typing App" onMouseDown={blockDragNDrop} /> : video}
+        {!video ? <img className={ProjectCardStyles.Image} src={photo} alt="Fingerz Typing App" onMouseDown={blockDragNDrop} /> : video}
       </div>
       <div className={ProjectCardStyles.Info}>
         <div className={ProjectCardStyles.Description}>
