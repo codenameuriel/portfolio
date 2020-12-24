@@ -4,7 +4,7 @@ import { blockDragNDrop } from '../../shared/utils';
 import { GrDeploy } from 'react-icons/gr';
 
 const ProjectCard = props => {
-  const { title, video, desc, frontend, backend, mapper, database, libraries, apis, github, deployed, deploymentLink } = props.projectData;
+  const { title, video, desc, frontend, backend, mapper, database, libraries, apis, github, deployed, deploymentLink, photo } = props.projectData;
 
   const renderTechStack = () => {
     const listValues = obj => {
@@ -59,7 +59,7 @@ const ProjectCard = props => {
             rel="noopener noreferrer" 
             onMouseDown={blockDragNDrop}><GrDeploy className={ProjectCardStyles.Deployed}/></a> : null}
         </div>
-        {video}
+        {!video ? <img src={photo} alt="Fingerz Typing App" onMouseDown={blockDragNDrop} /> : video}
       </div>
       <div className={ProjectCardStyles.Info}>
         <div className={ProjectCardStyles.Description}>

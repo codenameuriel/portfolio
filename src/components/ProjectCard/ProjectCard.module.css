@@ -64,6 +64,12 @@ iframe {
   height: 50%;
 }
 
+img {
+  border-radius: 0;
+  width: 100%;
+  height: auto;
+}
+
 .Description p {
   margin-bottom: 10px;
 }
