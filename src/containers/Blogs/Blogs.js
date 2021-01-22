@@ -19,7 +19,6 @@ class Blogs extends Component {
   async getBlogs() {
     try {
       const data = await mediumAxios.get(`codenameuriel/medium/${mediumKey}`);
-      console.log(data);
       const filteredData = data.data.filter(blog => !(["content:encoded"] in blog));
       this.setState({
         blogs: filteredData
@@ -68,7 +67,6 @@ class Blogs extends Component {
     if (this.state.blogs.length > 0) {
       blogs = (
         this.state.blogs.map((blog, index) => {
-          console.log(blog);
           const snip = blog.contentSnippet.split('Continue')[0];
           const specialChars = snip.slice(snip.length - 1)
           const continueSnip = blog.contentSnippet.split(specialChars)[1];

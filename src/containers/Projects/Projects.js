@@ -52,7 +52,7 @@ class Projects extends Component {
           photo: currProject.name === 'Fingerz Typing' ? FingerzAppPhoto : null
         };
 
-        projects.push(<ProjectCard projectData={projectData} />);
+        projects.push(<ProjectCard projectData={projectData} key={currProject.name} />);
       }
     }
 
